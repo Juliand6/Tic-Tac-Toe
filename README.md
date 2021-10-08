@@ -15,7 +15,8 @@ the game by inputting a move followed by the server who will select a move by ra
 # Functional Requirements
 As a player I can select whether I want to play by myself (player vs computer) or with another player (player vs player)
 - User will see a navigation bar at the top of the page. On the navigation bar, users will see 2 options, singleplayer and multiplayer.
-- 
+- If a user left clicks singleplayer, they will be directed to the singleplayer program. 
+- If a user left clicks multiplayer, they will be directed to the multiplayer program. 
 As a player, I can play a game of Tic-Tac-Toe by myself against the server.
 - User will be assigned either playerX or playerO
     - The user is assigned a player randomly at the beginning of every game. 
