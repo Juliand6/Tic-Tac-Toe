@@ -13,4 +13,9 @@ objective is to get three X’s or O’s lined up diagonally, in a row, or in a 
 the game by inputting a move followed by the server who will select a move by random until either the player wins, loses or creates a draw. If the user wins more than one game consecutively, the application will track the number of consecutive wins and record the final winstreak onto a leaderboard. There may also possibly be a 2 player option. There will also be a side function which allows users to search for and play spotify songs or playlists in the background as well as a weather dashboard which will tell users the weather outside based on the client's location. This will be done using a weather API and the spotify API. 
 
 # Requirements
+As a player, I can play a game of Tic-Tac-Toe by myself against the server.
+- Player must be assigned either playerX or playerO
+    - The player is assigned randomly at the beginning of every game. 
+    - The server is assigned a the opposite configuration as the user. (If user is playerX, server is playerO. If user is playerO, server is playerX)
+- 
 
