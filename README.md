@@ -17,13 +17,13 @@ As a player I can select whether I want to play by myself (player vs computer) o
 - User will see a navigation bar at the top of the page. On the navigation bar, users will see 2 options, singleplayer and multiplayer.
     - If a user left clicks singleplayer, they will be directed to the singleplayer program. 
     - If a user left clicks multiplayer, they will be directed to the multiplayer program. 
-    
+
 As a player, I can play a game of Tic-Tac-Toe by myself against the server.
 - User will be assigned either playerX or playerO
     - The user is assigned a player randomly at the beginning of every game. 
     - The server is assigned a the opposite configuration as the user. (If user is playerX, server is playerO. If user is playerO, server is playerX)
 -  User will be presented with a 3 by 3 grid. 
     - Above the 3 by 3 grid right aligned to the grid, there will be a winstreak counter in the format "Winstreak: " + winStreakNumber
-    - There will also be a text left aligned above the grid stating whether it's playerX or playerO's turn to play. 
+    - There will be a text left aligned above the grid stating whether it's playerX or playerO's turn to play. 
     - 
 
