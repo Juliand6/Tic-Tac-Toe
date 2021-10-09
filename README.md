@@ -31,11 +31,21 @@ This project will also have a few side functions aside from the main game of Tic
     - There will be a text left aligned above the grid stating whether it's playerX or playerO's turn to play. 
 
 - When it's the user's turn, the user will be able to make a play on the grid. 
+    - When it's the user's turn, a graphic will slide across the screen saying "Your Turn". 
     - playerX will always have the first turn. playerO will always have the second turn. This is a recursive process and will loop until the game concludes. 
-    - To input a move, the user will left click on a box in the grid. If the user is playerX then there will be a X in the box. If the user if playerO there will be an O in the box.
-    - Squares that have either an X or O inside are marked as filled. Filled boxes are illegal moves. 
+    - To input a move, the user will left click on a box in the grid. If the user is playerX then there will be a X in the box. If the user is playerO there will be an O in the box.
+    - Squares that have either an X or O inside are recorded as filled. Filled boxes are illegal moves. 
     - During the user's move, all legal moves (unfilled boxes) will have a dot in the center of the box to indicate a legal move. After a move is input, the turn is over.
     - When the turn is over, all dots will dissapear from the grid until it becomes the user's turn again.  
     - Users can only input moves when it's their turn. When it is not the user's turn, clicks inside the grid will not trigger anything. 
-    -  
+    - After the user inputs a move, a graphic will show up and fade away and a sound effect will play.
+
+- When it's the server's turn, the computer will input a random legal move. 
+    - A graphic will slide across the screen saying "Computer's Turn".
+    - There will be an artificial delay before the server inputs a move. This delay will be a random duration between 2-3 seconds. 
+    - After the server selects a box to input a move into, the corresponding symbol is placed inside the box. If the server is playerX then there will be a X in the box. If the server is playerO there will be an O in the box. 
+    - During the delay, a buffering animation will play and loop until a move is input. 
+    - After the server inputs a move, the turn is over. 
+
+- When either the server or the user connects three of their symbols 
 
