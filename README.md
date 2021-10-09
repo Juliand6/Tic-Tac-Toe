@@ -50,4 +50,5 @@ This project will also have a few side functions aside from the main game of Tic
 - When either the server or the user connects three of their symbols in a line, they win. 
     - A win is awarded if either Xs or Os are on the board in one of the following combinations: 123, 147, 159, 357, 567, 369 (see image below)
     ![Tic Tac Toe board](https://cdn.discordapp.com/attachments/302526564636164098/896158325765468202/tictactoe.png)
+    - If the player wins, 
 
