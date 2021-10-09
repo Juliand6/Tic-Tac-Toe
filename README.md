@@ -28,4 +28,5 @@ the game by inputting a move followed by the server who will select a move by ra
     - There will be a text left aligned above the grid stating whether it's playerX or playerO's turn to play. 
 
 - When it's the user's turn, the user will be able to make a play on the grid. 
+    - To input a move, the user will click on a box in the grid. If the user is playerX then there will be a X in the box. If the user if playerO there will be an O in the box.
 
