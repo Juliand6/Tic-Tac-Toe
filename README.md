@@ -62,5 +62,7 @@ This project will also have a few side functions aside from the main game of Tic
         - Clicking on the leaderboards button pulls up a leaderboard graphic in the middle of the screen which will display the top 10 highest winstreak counters mapped in the database along with the corresponding names in descending order from biggest to smallest. 
         - There will be a back button at the bottom of the leaderboards which will take players back to the previous menu when clicked. 
         - Clicking on the play again button will reset the game. This means the winstreak counter is set to 0 and a new game begins.
-     
+
+**As a player, I can play a game of Tic-Tac-Toe against another player**
+-  
 
