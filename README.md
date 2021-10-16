@@ -48,7 +48,19 @@ This project will also have a few side functions aside from the main game of Tic
     - After the server inputs a move, the turn is over. 
 
 - When either the server or the user connects three of their symbols in a line, they win. 
-    - A win is awarded if either Xs or Os are on the board in one of the following combinations: 123, 147, 159, 357, 567, 369 (see image below)
+    - A win is awarded if either Xs or Os are positioned on the board in one of the following combinations: 123, 147, 159, 357, 567, 369 (see image below)
     ![Tic Tac Toe board](https://cdn.discordapp.com/attachments/302526564636164098/896158325765468202/tictactoe.png)
-    - If the player wins, 
+    - If the player wins, a graphic will appear indicating the player has won and a point has been added to their winstreak counter. 
+        - The number next to "Winstreak: " is incremented by one 
+        - A button will appear with "next game" written on it in the center of the grid.
+        - If the player clicks the button, everything on the grid is reset and a new game of tic-tac-toe begins
+        - A graphic will fade in and out saying "Game: " + winStreakNumber + 1
+    - If the computer wins, a graphic will appear indicating the player has lost. 
+    - An input box will appear over the grid with the text "Please enter your name" 
+    - After the player has entered their name, the server should save their name with the corresponding winstreak count at the time of their loss. 
+    - After the player has input their name, a menu will appear in the center of the screen with 2 buttons: play again, and leaderboards. 
+        - Clicking on the leaderboards button pulls up a leaderboard graphic in the middle of the screen which will display the top 10 highest winstreak counters mapped in the database along with the corresponding names in descending order from biggest to smallest. 
+        - There will be a back button at the bottom of the leaderboards which will take players back to the previous menu when clicked. 
+        - Clicking on the play again button will reset the game. This means the winstreak counter is set to 0 and a new game begins.
+     
 
