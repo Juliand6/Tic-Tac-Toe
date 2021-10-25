@@ -16,12 +16,12 @@ the game by inputting a move followed by the server who will select a move by ra
 This project will also have a few side functions aside from the main game of Tic Tac Toe. There will be a side function which allows users to select one of several background soundtracks to in the background. This widget will also allow users to pause the music, skip to next track, restart the track, or jump to previous track. Another side function present will be a weather dashboard which will tell users the weather outside based on the client's location. This will be done using a weather API. 
 
 # Functional Requirements
-**As a player I can select whether I want to play by myself (player vs computer) or with another player (player vs player)**
+**Navigational Requirements**
 - User will see a navigation bar at the top of the page. On the navigation bar, users will see 2 options, singleplayer and multiplayer.
     - If a user left clicks singleplayer, they will be directed to the singleplayer program. 
     - If a user left clicks multiplayer, they will be directed to the multiplayer program. 
 
-**As a player, I can play a game of Tic-Tac-Toe by myself against the server.**
+**Single Player Requirements**
 - User will be assigned either playerX or playerO
     - The user is assigned a player randomly at the beginning of every game. 
     - The server is assigned a the opposite configuration as the user. (If user is playerX, server is playerO. If user is playerO, server is playerX)
@@ -63,6 +63,6 @@ This project will also have a few side functions aside from the main game of Tic
         - There will be a back button at the bottom of the leaderboards which will take players back to the previous menu when clicked. 
         - Clicking on the play again button will reset the game. This means the winstreak counter is set to 0 and a new game begins.
 
-**As a player, I can play a game of Tic-Tac-Toe against another player**
+**Player vs Player Requirements**
 -  
 
