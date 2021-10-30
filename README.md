@@ -78,6 +78,8 @@ Local:
 
 Online: 
 - If Online is selected, a menu with the button find match will appear in the center of the screen. 
-- When find match is clicked, the button will switch to cancel search, and a finding match animation will play. 
-- 
-- If the player clicks cancel search, the 
+- When find match is clicked, the button will switch to cancel search, and a finding match animation will play. The player will be placed in the matching queue 
+- If 2 or more players are in the queue at the same time, the server will place them into pairs to play against each other.  
+- If the player clicks cancel search, the player will be removed from the queue, and will be sent back to the previous menu with the find match button.
+- When 2 players are matched one will randomly be assigned playerX and the other playerO. 
+- A 3x3 grid will appear in the center of the screen. 
