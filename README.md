@@ -16,8 +16,12 @@ the game by inputting a move followed by the server who will select a move by ra
 This project will also have a few side functions aside from the main game of Tic Tac Toe. There will be a side function which allows users to select one of several background soundtracks to in the background. This widget will also allow users to pause the music, skip to next track, restart the track, or jump to previous track. Another side function present will be a weather dashboard which will tell users the weather outside based on the client's location. This will be done using a weather API. 
 
 # Functional Requirements
+
+**Homepage Requirements** 
+- On the homepage there will be a picture of the game to the left of the screen, and a description of the rules to the right of the image. 
+
 **Navigational Requirements**
-- User will see a navigation bar at the top of the page. On the navigation bar, users will see 2 options, singleplayer and multiplayer.
+- User will see a navigation bar at the top of every page. On the navigation bar, users will see 3 options, singleplayer, multiplayer, leaderboards.
     - If a user left clicks singleplayer, they will be directed to the singleplayer program. 
     - If a user left clicks multiplayer, they will be directed to the multiplayer program. 
 
@@ -59,7 +63,7 @@ This project will also have a few side functions aside from the main game of Tic
     - An input box will appear over the grid with the text "Please enter your name" 
     - After the player has entered their name, the server should save their name with the corresponding winstreak count at the time of their loss. 
     - After the player has input their name, a menu will appear in the center of the screen with 2 buttons: play again, and leaderboards. 
-        - Clicking on the leaderboards button pulls up a leaderboard graphic in the middle of the screen which will display the top 10 highest winstreak counters mapped in the database along with the corresponding names in descending order from biggest to smallest. 
+        - Clicking on the leaderboards button pulls up a leaderboard graphic in the middle of the screen which will display the top 40 highest winstreak counters mapped in the database along with the corresponding names in descending order from biggest to smallest. There will be a scroll bar if all the names cannot fit in the graphic. 
         - There will be a back button at the bottom of the leaderboards which will take players back to the previous menu when clicked. 
         - Clicking on the play again button will reset the game. This means the winstreak counter is set to 0 and a new game begins.
 
@@ -77,9 +81,18 @@ Local:
 - If play again is pressed the game will reset to the state when the multiplayer option was first selected.
 
 Online: 
-- If Online is selected, a menu with the button find match will appear in the center of the screen. 
+- If Online is selected, a menu with the button find match will appear in the center of the screen. There will also be an optional text input box to type in a display name
 - When find match is clicked, the button will switch to cancel search, and a finding match animation will play. The player will be placed in the matching queue 
 - If 2 or more players are in the queue at the same time, the server will place them into pairs to play against each other.  
 - If the player clicks cancel search, the player will be removed from the queue, and will be sent back to the previous menu with the find match button.
 - When 2 players are matched one will randomly be assigned playerX and the other playerO. 
-- A 3x3 grid will appear in the center of the screen. 
+- A 3x3 grid will appear in the center of the screen. At the top left corner of the grid, there will be text indicating which player's turn it is. On the top right, there will be text telling you which player's been assigned (playerX or playerO). On the left side it will display your display name, and on the right your opponent's. If either player has not entered a display name, they will be assigned anon as their display name.
+- There will be a "chat feature" where players can click on 3 different buttons: glhf!, gg!, or good move!. If you select a chat option, the message will appear inside a chat bubble next to your display name. 
+- When a player wins, a graphic will appear over the grid indicating whether you won or lost. There will also be a button that says play again which will put you back into the queue if clicked. 
+
+**Leaderboards Requirements**
+- When the leaderboards page is pulled up, there will be a box in the center of the page. In the box will be the full leaderboards graphic. There will be a scroll bar if the full leaderboard doesn't fit. 
+
+**Widgets Requirements**
+- There will be a music/spotify widget on the multiplayer and singleplayer pages underneath the 3x3 grid. It will show up in a minimized form, and expand if the mouse hovers over it.  
+- There will be a weather widget which will be on all the pages except for homepage. It will be located to the left of the page in a minimized form. When moused over, it will expand. 
