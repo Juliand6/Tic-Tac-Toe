@@ -64,5 +64,20 @@ This project will also have a few side functions aside from the main game of Tic
         - Clicking on the play again button will reset the game. This means the winstreak counter is set to 0 and a new game begins.
 
 **Player vs Player Requirements**
--  
+-  When multiplayer is selected, a menu will first pop up with 2 buttons, local and online. 
 
+Local: 
+- If local is selected a 3 by 3 grid will appear in the center of the screen with a text above left aligned to the grid that indicates whether it is playerX or playerO's turn. 
+- PlayerX will always go first. PlayerX can place a move by clicking any of the boxes in the grid. Once playerX has clicked a box, an X will appear in the box and the box is now illegal for future moves (unclickable). PlayerX's turn is over and the text at the top reflects this. 
+- A graphic will slide across the screen indicating playerX's turn is over. 
+- PlayerO can now click a box on the grid to place an O inside. 
+- The game ends if the configuration of Xs or Os lines up as 3 (see image above) or if all boxes on the board are filled and neither played has own. 
+- If Xs are lined up as 3, playerX wins, if Os are lined up as 3, playerO wins. 
+- A graphic will appear congratulating the winning player if a player has won, or indicating a draw if the game has been drawn. A button will appear afterwards that says play again
+- If play again is pressed the game will reset to the state when the multiplayer option was first selected.
+
+Online: 
+- If Online is selected, a menu with the button find match will appear in the center of the screen. 
+- When find match is clicked, the button will switch to cancel search, and a finding match animation will play. 
+- 
+- If the player clicks cancel search, the 
