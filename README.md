@@ -13,7 +13,7 @@ objective is to get three X’s or O’s lined up diagonally, in a row, or in a 
 the game by inputting a move followed by the server who will select a move by random until either the player wins, loses or creates a draw. If the user wins more than one game consecutively, the application will track the number of consecutive wins and record the final winstreak onto a leaderboard. There will also possibly be a player vs player option. 
 
 
-This project will also have a few side functions aside from the main game of Tic Tac Toe. There will be a side function which allows users to select one of several background soundtracks to in the background. This widget will also allow users to pause the music, skip to next track, restart the track, or jump to previous track. Another side function present will be a weather dashboard which will tell users the weather outside based on the client's location. This will be done using a weather API. 
+This project will also have a few side functions aside from the main game of Tic Tac Toe. There will be a side function which allows users to play music in the background. This widget will also allow users to pause the music, skip to next track, restart the track, or jump to previous track and search for a specific song or playlist. Another side function present will be a weather dashboard which will tell users the weather outside based on the client's location. This will be done using a weather API. 
 
 # Functional Requirements
 
@@ -81,7 +81,7 @@ Local:
 - If play again is pressed the game will reset to the state when the multiplayer option was first selected.
 
 Online: 
-- If Online is selected, a menu with the button find match will appear in the center of the screen. There will also be an optional text input box to type in a display name
+- If online is selected, a menu with the button find match will appear in the center of the screen. There will also be an optional text input box to type in a display name
 - When find match is clicked, the button will switch to cancel search, and a finding match animation will play. The player will be placed in the matching queue 
 - If 2 or more players are in the queue at the same time, the server will place them into pairs to play against each other.  
 - If the player clicks cancel search, the player will be removed from the queue, and will be sent back to the previous menu with the find match button.
