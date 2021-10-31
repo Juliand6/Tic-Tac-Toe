@@ -92,7 +92,8 @@ Online:
 
 **Leaderboards Requirements**
 - When the leaderboards page is pulled up, there will be a box in the center of the page. In the box will be the full leaderboards graphic. There will be a scroll bar if the full leaderboard doesn't fit. 
+- There will be an input box above the leaderboards where the user can search a specific name, and the leaderboards will filter by the name entered.
 
 **Widgets Requirements**
-- There will be a music/spotify widget on the multiplayer and singleplayer pages underneath the 3x3 grid. It will show up in a minimized form, and expand if the mouse hovers over it.  
+- There will be a music widget on the multiplayer and singleplayer pages underneath the 3x3 grid. It will show up in a minimized form, and expand if the mouse hovers over it.  
 - There will be a weather widget which will be on all the pages except for homepage. It will be located to the left of the page in a minimized form. When moused over, it will expand. 
