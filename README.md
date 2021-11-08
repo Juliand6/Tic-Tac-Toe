@@ -97,5 +97,7 @@ Online:
 **Widgets Requirements**
 - There will be a music widget on the multiplayer and singleplayer pages underneath the 3x3 grid. It will show up in a minimized form, and expand if the mouse hovers over it.  
 - There will be a weather widget which will be on all the pages except for homepage. It will be located to the left of the page in a minimized form. When moused over, it will expand. 
+
 **Wireframe**
  ![Wireframe](https://cdn.discordapp.com/attachments/902823761739386922/907382332527358002/2_TikTak2.png)
+A more clear image can be found Here https://github.com/Juliand6/Tic-Tac-Toe/blob/main/2_TikTak2.docx
