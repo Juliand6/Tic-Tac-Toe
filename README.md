@@ -100,4 +100,4 @@ Online:
 
 **Wireframe**
  ![Wireframe](https://cdn.discordapp.com/attachments/902823761739386922/907382332527358002/2_TikTak2.png)
-A more clear image can be found Here https://github.com/Juliand6/Tic-Tac-Toe/blob/main/2_TikTak2.docx
+A more clear image can be found Here https://github.com/Juliand6/Tic-Tac-Toe/blob/main/2_TikTak2.pdf
