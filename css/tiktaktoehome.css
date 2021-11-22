@@ -1,35 +1,46 @@
-html, body {
-    height: 100%;
-    overflow: auto;
-}
-
 body {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f23081+0,2989d8+69,7db9e8+100 */
-background: #f23081; /* Old browsers */
-background: -moz-linear-gradient(top,  #f23081 0%, #2989d8 69%, #7db9e8 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #f23081 0%,#2989d8 69%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #f23081 0%,#2989d8 69%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f23081', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+    margin: 0;
 }
 
-.navmenu  .active, .navmenu li a:hover {
-    color:#1b1d29;
-    font-weight: bold;
-    transition: all ease 0.2s;
+.container {
+    width: 100vy;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr 50px;
+    padding: 20px;
+    box-sizing:border-box;
+    background: rgb(221,57,238);
+    background: linear-gradient(90deg, rgba(221,57,238,1) 0%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
 }
 
-#rulesText {
-    text-align:right;
+header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end:2;
+    background: black;
+    padding-left:10px;
+    padding-right:10px;
 }
 
-#rulesImage {
-    text-align: left;
+li {
+    list-style: none;
+    display: inline;
+    margin-left:30px;
 }
 
-footer{
-    background-color:lightblue;
-	margin-top:20px;
-	text-align:center;
-	font-size:10px;
-    float: inline-end;
+nav {
+    text-align:center;
+    margin-bottom:20px;
+    background:grey;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+#content {
+    margin-top: 40px;
+}
+
+div #rulesText {
+    float: right;
 }

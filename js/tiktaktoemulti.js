@@ -4,14 +4,14 @@ a function that handles when a spot is clicked
 a function that determines wether the game ended in a win loss or draw
 a function that resets the game
 */
-let active = true
+let active = true;
 
 let player = "X";
 
 var showStatus = document.getElementById("turn");
 
 //empty board
-let board = ["", "", "", "", "", "", "", "", ""]
+let board = ["", "", "", "", "", "", "", "", ""];
 
 //messages that will be displayed
 const winner = () => `Player ${player} Wins!`;

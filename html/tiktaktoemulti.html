@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title> Multiplayer </title>
-    <link rel="stylesheet" type="text/css" href="tiktaktoemulti.css" title="style" />
-    <script src="tiktaktoemulti.js"></script>
+    <link rel="stylesheet" type="text/css" href="..\css\tiktaktoemulti.css" title="style" />
+    <script src="..\js\tiktaktoemulti.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,38 +13,46 @@
 </head>
 
 <body>
-    <nav>
-        <img id="logo" src="" alt="tiktaktoe Logo" />
-        <ul class="navmenu">
-            <li><a href="tiktaktoesingle.html">SinglePlayer</a></li>
-            <li><a href="tiktaktoemulti.html">Multiplayer</a></li>
-            <li><a href="tiktaktoelead.html">Leaderboards</a></li>
-        </ul>
-    </nav>
-    <div id="gameboard">
-        <div class="container">
-            <div data-cell-index="0" class="cell"></div>
-            <div data-cell-index="1" class="cell"></div>
-            <div data-cell-index="2" class="cell"></div>
-            <div data-cell-index="3" class="cell"></div>
-            <div data-cell-index="4" class="cell"></div>
-            <div data-cell-index="5" class="cell"></div>
-            <div data-cell-index="6" class="cell"></div>
-            <div data-cell-index="7" class="cell"></div>
-            <div data-cell-index="8" class="cell"></div>
+    <div class="container">
+        <header>
+            <a href="tiktaktoehome.html">
+                <img id="logo" src="images\logo.png" alt="tiktaktoe Logo" />
+            </a>
+            <nav>
+                <ul class="navmenu">
+                    <li><a href="tiktaktoesingle.html">SinglePlayer</a></li>
+                    <li>|</li>
+                    <li><a href="tiktaktoemulti.html">Multiplayer</a></li>
+                    <li>|</li>
+                    <li><a href="tiktaktoelead.html">Leaderboards</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="gameboard">
+            <div class="container">
+                <div data-cell-index="0" class="cell"></div>
+                <div data-cell-index="1" class="cell"></div>
+                <div data-cell-index="2" class="cell"></div>
+                <div data-cell-index="3" class="cell"></div>
+                <div data-cell-index="4" class="cell"></div>
+                <div data-cell-index="5" class="cell"></div>
+                <div data-cell-index="6" class="cell"></div>
+                <div data-cell-index="7" class="cell"></div>
+                <div data-cell-index="8" class="cell"></div>
+            </div>
+            <div id="gametext">
+                <p id="turn"></p>
+                <p id="winstreak"></p>
+            </div>
+            <div id="grid">
+            </div>
         </div>
-        <div id="gametext">
-            <p id="turn"></p>
-            <p id="winstreak"></p>
+        <div id="weather">
         </div>
-        <div id="grid">
+        <div id="music">
         </div>
+        <footer>(c) Authors:<span>Jason Yang and Julian D’Alessandro</span></footer>
     </div>
-    <div id="weather">
-    </div>
-    <div id="music">
-    </div>
-    <footer>(c) Authors:<span>Jason Yang and Julian D’Alessandro</span></footer>
 </body>
 
 </html>

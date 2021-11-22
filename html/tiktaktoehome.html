@@ -12,44 +12,57 @@
 </head>
 
 <body>
-    <header>
-        <img id="logo" src="" alt="tiktaktoe Logo" />
-        <nav>
-            <ul class="navmenu">
-                <li><a href="tiktaktoesingle.html">SinglePlayer</a></li>
-                <li><a href="tiktaktoemulti.html">Multiplayer</a></li>
-                <li><a href="tiktaktoelead.html">Leaderboards</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div id="rules">
-        <div id="rulesText">
-            <h1>Rules:</h1>
-            <p>Tic-Tac-Toe is a 2 player game in which both players take turns
-                placing their corresponding game pieces in a 3 by 3 grid. The game
-                ends and a player wins when either player manages to connect 3 of their
-                game pieces in a row. A row can be defined as any of the conjugations
-                of the following spaces on the grid: 123, 147, 258, 369, 456, 789, 159, 357 (refer to picture on the
-                left).
-                At the start of the game both players will be randomly assigned a symbol, either Os or Xs, this will
-                be your corresponding symbol for the game. Player X will always make the first move, and player O will
-                make the second.
-            </p>
-            <h2>Singleplayer</h2>
-            <p>Play against the server! Try to win as many games in a row as possible.
-                Highest winstreaks will be displayed at the top of the leaderboards. Your
-                winstreak ends when you either get a draw or a loss against the computer</p>
-            <h2>Multiplayer</h2>
-            <p>Play against another player locally or online!
-            <h2>Leaderboards</h2>
-            <p>See where you and other players rank on the singleplayer
-                leaderboards!</p>
-        </div>
-        <div id="rulesImage">
-            <img src="images\tictactoeBoard.png" alt="TikTakToe Board Positions" />
+    <div class="container">
+        <header>
+            <a href = "tiktaktoehome.html">
+            <img id="logo" src="images\logo.png" alt="tiktaktoe Logo" />
+            </a>
+            <nav>
+                <ul class="navmenu">
+                    <li><a href="tiktaktoesingle.html">SinglePlayer</a></li>
+                    <li>|</li>
+                    <li><a href="tiktaktoemulti.html">Multiplayer</a></li>
+                    <li>|</li>
+                    <li><a href="tiktaktoelead.html">Leaderboards</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content">
+            <div id="rules">
+                <div id="rulesText">
+                    <h1>Rules:</h1>
+                    <p>Tic-Tac-Toe is a 2 player game in which both players take turns
+                        placing their corresponding game pieces in a 3 by 3 grid. The game
+                        ends and a player wins when either player manages to connect 3 of their
+                        game pieces in a row. A row can be defined as any of the conjugations
+                        of the following spaces on the grid: 123, 147, 258, 369, 456, 789, 159, 357 (refer to picture on
+                        the
+                        left).
+                        At the start of the game both players will be randomly assigned a symbol, either Os or Xs, this
+                        will
+                        be your corresponding symbol for the game. Player X will always make the first move, and player
+                        O
+                        will
+                        make the second.
+                    </p>
+                    <h2>Singleplayer</h2>
+                    <p>Play against the server! Try to win as many games in a row as possible.
+                        Highest winstreaks will be displayed at the top of the leaderboards. Your
+                        winstreak ends when you either get a draw or a loss against the computer</p>
+                    <h2>Multiplayer</h2>
+                    <p>Play against another player locally or online!
+                    <h2>Leaderboards</h2>
+                    <p>See where you and other players rank on the singleplayer
+                        leaderboards!</p>
+                </div>
+                <div id="rulesImage">
+                    <img src="images\tictactoeBoard.png" alt="TikTakToe Board Positions" />
+                </div>
+                <button onclick="window.location.href='tiktaktoesingle.html';">Play Now</button>
+            </div>
         </div>
     </div>
-    <footer>(c) Authors:<span>Jason Yang and Julian D’Alessandro</span></footer>
+    <footer>(c) 2021, Authors:<span>Jason Yang and Julian D’Alessandro</span></footer>
 </body>
 
 </html>
