@@ -4,21 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title> Leaderboards </title>
-    <link rel="stylesheet" type="text/css" href="tiktaktoesingle.css" title="style" />
+    <link rel="stylesheet" type="text/css" href="..\css\tiktaktoelead.css" title="style" />
     <script src="tiktaktoesingle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <nav>
-        <img id = "logo" src = "" alt="tiktaktoe Logo"/>
-        <ul class="navmenu">
-            <li><a href="tiktaktoesingle.html">SinglePlayer</a></li>
-            <li><a href="tiktaktoemulti.html">Multiplayer</a></li>
-            <li><a href="tiktaktoelead.html">Leaderboards</a></li>
-        </ul>
-    </nav>
-    <div id = "leaderboards">
+    
+    <header>
+        <a href="tiktaktoehome.html">
+            <img id="logo" src="images\logo.png" alt="tiktaktoe Logo" />
+        </a>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </header>
+    <ul class="navmenu">
+        <li><a href="tiktaktoesingle.html">SinglePlayer</a></li>
+        <li>|</li>
+        <li><a href="tiktaktoemulti.html">Multiplayer</a></li>
+        <li>|</li>
+        <li><a href="tiktaktoelead.html">Leaderboards</a></li>
+    </ul>
+    <div class = "leaderboards">
     </div>
     <footer>(c) Authors:<span>Jason Yang and Julian D’Alessandro</span></footer> 
 </body>

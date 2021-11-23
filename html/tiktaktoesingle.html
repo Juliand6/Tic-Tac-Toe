@@ -13,21 +13,22 @@
 </head>
 
 <body>
-    <div class="container">
         <header>
             <a href="tiktaktoehome.html">
                 <img id="logo" src="images\logo.png" alt="tiktaktoe Logo" />
             </a>
-            <nav>
-                <ul class="navmenu">
-                    <li><a href="tiktaktoesingle.html">SinglePlayer</a></li>
-                    <li>|</li>
-                    <li><a href="tiktaktoemulti.html">Multiplayer</a></li>
-                    <li>|</li>
-                    <li><a href="tiktaktoelead.html">Leaderboards</a></li>
-                </ul>
-            </nav>
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
         </header>
+        <ul class="navmenu">
+            <li><a href="tiktaktoesingle.html">SinglePlayer</a></li>
+            <li>|</li>
+            <li><a href="tiktaktoemulti.html">Multiplayer</a></li>
+            <li>|</li>
+            <li><a href="tiktaktoelead.html">Leaderboards</a></li>
+        </ul>
         <div id="gameboard">
             <div id="gametext">
                 <p id="turn"></p>
@@ -41,7 +42,6 @@
         <div id="music">
         </div>
         <footer>(c) Authors:<span>Jason Yang and Julian D’Alessandro</span></footer>
-    </div>
 </body>
 
 </html>
