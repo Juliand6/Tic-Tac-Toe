@@ -7,11 +7,15 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 1fr 1fr 50px;
+    grid-template-rows: 100px 60px 1fr 1fr 50px;
+    grid-template-areas: 
+    "header header header"
+    ". . ."
+    "#rulesImage #rulesText #rulesText"
+    "#rulesImage #rulesText #rulesText"
+    ". . #playNow";
     padding: 20px;
     box-sizing:border-box;
-    background: rgb(221,57,238);
-    background: linear-gradient(90deg, rgba(221,57,238,1) 0%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
 }
 
 header {
@@ -37,10 +41,8 @@ nav {
     padding-top: 1px;
     padding-bottom: 1px;
 }
-#content {
-    margin-top: 40px;
-}
 
-div #rulesText {
-    float: right;
+#rulesImage img {
+    width: 500px;
+    height: 500p;
 }
