@@ -98,6 +98,7 @@ footer {
     display: flex;
     flex-direction: column;
     margin-top: 100px;
+    padding-left: 200px;
 }
 
 .titleScreen h1 {
@@ -119,7 +120,7 @@ footer {
 }
 
 .titleScreen button {
-    margin-left: 300px;
+    margin-left: 225px;
     height: 50px;
     width: 200px;
     border-radius: 30px;
@@ -129,7 +130,7 @@ footer {
     font-family: 'Rubik', sans-serif;
     font-size:20px;
     font-weight:700;
-    color:purple;
+    color:orange;
 }
 
 .titleScreen button:hover {

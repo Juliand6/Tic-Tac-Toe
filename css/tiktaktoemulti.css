@@ -95,6 +95,7 @@ footer {
 }
 
 .titleScreen {
+    padding-left:200px;
     display: flex;
     flex-direction: column;
     margin-top: 100px;
@@ -119,7 +120,7 @@ footer {
 }
 
 .titleScreen button {
-    margin-left: 300px;
+    margin-left: 225px;
     height: 50px;
     width: 200px;
     border-radius: 30px;
