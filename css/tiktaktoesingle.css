@@ -138,3 +138,12 @@ footer {
     cursor: pointer;
     border: 2px solid purple; 
 }
+
+.tileIndicator {
+    margin-top: 150px;
+    padding-left: 200px;
+    color: white;
+    width:200px;
+    font-family: 'Poppins', sans-serif;
+}
+
