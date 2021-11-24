@@ -30,20 +30,30 @@
         <li><a href="tiktaktoelead.html">LEADERBOARDS</a></li>
     </ul>
     <div class="container">
+        <div class="music">
+        </div>
         <div class="gameboard">
             <div class="gametext">
                 <p id="turn"></p>
                 <p id="winstreak"></p>
             </div>
             <div class="grid">
+                <div class="titleScreen">
+                    <h1 id="title">> SINGLE<span>PLAYER</span></h1>
+                    <p>Play against the computer and try to win as many games in a row! See how your winstreak score
+                        compared with other players on the leaderboards afterwards!
+                        (note that this means you are not allowed to lose OR draw otherwise the round ends and your
+                        winstreak is reset.)
+                    </p>
+                    <button id="startGame" onclick="startGame()">Start Game</button>
+                </div>
             </div>
         </div>
         <div class="weather">
         </div>
-        <div class="music">
-        </div>
+
     </div>
-    <footer>(c) Authors:<span>Jason Yang and Julian D’Alessandro</span></footer>
+    <footer>(c) Authors: Jason Yang and Julian D’Alessandro</footer>
 </body>
 
 </html>

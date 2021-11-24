@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Multiplayer </title>
+    <title> Singleplayer </title>
     <link rel="stylesheet" type="text/css" href="..\css\tiktaktoemulti.css" title="style" />
-    <script src="..\js\tiktaktoemulti.js"></script>
+    <script src="..\js\tiktaktoesingle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,22 +29,28 @@
         <li>|</li>
         <li><a href="tiktaktoelead.html">LEADERBOARDS</a></li>
     </ul>
-        <div id="gameboard">
-            <div class="container">
-
-            </div>
-            <div id="gametext">
+    <div class="container">
+        <div class="music">
+        </div>
+        <div class="gameboard">
+            <div class="gametext">
                 <p id="turn"></p>
                 <p id="winstreak"></p>
             </div>
-            <div id="grid">
+            <div class="grid">
+                <div class="titleScreen">
+                    <h1 id="title">> MULTI<span>PLAYER</span></h1>
+                    <p> Play against another player either locally or online!(wip) 
+                    </p>
+                    <button id="startGame" onclick="startGame()">Start Game</button>
+                </div>
             </div>
         </div>
-        <div id="weather">
+        <div class="weather">
         </div>
-        <div id="music">
-        </div>
-        <footer>(c) Authors:<span>Jason Yang and Julian D’Alessandro</span></footer>
+
+    </div>
+    <footer>(c) Authors: Jason Yang and Julian D’Alessandro</footer>
 </body>
 
 </html>
