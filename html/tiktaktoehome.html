@@ -22,22 +22,21 @@
             </div>
         </header>
         <ul class="navmenu">
-            <li><a href="tiktaktoesingle.html">SinglePlayer</a></li>
+            <li><a href="tiktaktoesingle.html">SINGLEPLAYER</a></li>
             <li>|</li>
-            <li><a href="tiktaktoemulti.html">Multiplayer</a></li>
+            <li><a href="tiktaktoemulti.html">MULTIPLAYER</a></li>
             <li>|</li>
-            <li><a href="tiktaktoelead.html">Leaderboards</a></li>
+            <li><a href="tiktaktoelead.html">LEADERBOARDS</a></li>
         </ul>
         <div class="container">
         <div class="rulesText">
-            <h1 id="welcome">> WELCOME TO TIC_TAC_TOE</h1>
-            <p id="rules">Rules: Tic-Tac-Toe is a 2 player game in which both players take turns
-                placing their corresponding game pieces in a 3 by 3 grid. The game
+            <h1 id="welcome">> WELCOME TO <span>TIC_TAC_TOE</span></h1>
+            <p id="rules">Tic-Tac-Toe is a 2 player game in which both players take turns
+                placing their corresponding game pieces in a 3 by 3 grid. At the start of the game both players will be randomly assigned a symbol, either Os or Xs, this
+                willbe your corresponding symbol for the game (note that player X will always make the first move). The game
                 ends and a player wins when either player manages to connect 3 of their
-                game pieces in line either verticall, horizontall or diagonally! 
-                At the start of the game both players will be randomly assigned a symbol, either Os or Xs, this
-                will
-                be your corresponding symbol for the game. Player X will always make the first move.
+                game pieces in line either vertically, horizontally or diagonally along the grid. 
+                
             </p>
             <!--<h3>Singleplayer</h3>
             <p>Play against the server! Try to win as many games in a row as possible.
@@ -49,9 +48,11 @@
             <p>See where you and other players rank on the singleplayer
                 leaderboards!</p>-->
         </div>
-        <button id = "playNow" onclick="window.location.href='tiktaktoesingle.html';">Play Now</button>
+        <div class="playButton">
+        <button id = "playNow" onclick="window.location.href='tiktaktoesingle.html';"><span>PLAY NOW!</span></button>
+        </div>
     </div>
-    <footer>(c) 2021 Authors:Jason Yang and Julian D’Alessandro</footer>
+    <footer>(c) 2021 Authors: Jason Yang and Julian D’Alessandro</footer>
 </body>
 
 </html>

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:wght@500&family=Rubik:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Rubik:wght@400;700&display=swap');
 
 body {
     margin: 0;
@@ -55,4 +57,8 @@ footer {
     justify-content: center;
     font-family: 'Rubik', sans-serif;
     font-size:10px;
+    padding-top:13px;
+    padding-bottom:10px;
+    background: blue;
 }
+
