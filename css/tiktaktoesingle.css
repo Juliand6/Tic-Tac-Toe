@@ -48,6 +48,10 @@ li {
     letter-spacing: 1px;
 }
 
+#current {
+    color: orange;
+}
+
 footer {
     width: 100%;
     display: flex;
@@ -112,7 +116,7 @@ footer {
     color: white;
     width: 700px;
     font-family: 'Poppins', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .titleScreen span {
@@ -147,3 +151,6 @@ footer {
     font-family: 'Poppins', sans-serif;
 }
 
+.tileIndicator span {
+    color: orange;
+}

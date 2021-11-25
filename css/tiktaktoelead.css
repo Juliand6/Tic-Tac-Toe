@@ -48,6 +48,10 @@ li {
     letter-spacing: 1px;
 }
 
+#current {
+    color: orange;
+}
+
 footer {
     width: 100%;
     display: flex;
