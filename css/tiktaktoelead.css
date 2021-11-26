@@ -17,6 +17,10 @@ header {
     height: 100px;
 }
 
+.navmenu li a:hover{
+    font-weight:700;
+}
+
 li {
     list-style: none;
     display: inline;

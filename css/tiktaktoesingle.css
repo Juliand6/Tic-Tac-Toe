@@ -112,6 +112,10 @@ footer {
     margin: 0;
 }
 
+.navmenu li a:hover{
+    font-weight:700;
+}
+
 .titleScreen p {
     color: white;
     width: 700px;

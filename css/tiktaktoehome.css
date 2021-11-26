@@ -48,6 +48,10 @@ li {
     letter-spacing: 1px;
 }
 
+.navmenu li a:hover{
+    font-weight:700;
+}
+
 .container {
     margin-top:20px;
     display:grid;

@@ -28,6 +28,10 @@ li {
     color: orange;
 }
 
+.navmenu li a:hover{
+    font-weight:700;
+}
+
 .navmenu {
     display: flex;
     justify-content: center;
