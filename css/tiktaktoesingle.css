@@ -158,3 +158,12 @@ footer {
 .tileIndicator span {
     color: orange;
 }
+
+#container {
+    height: 400px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background:url(tictactoeboard.png);
+}
