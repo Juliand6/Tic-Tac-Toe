@@ -76,7 +76,7 @@ footer {
 .music {
     width: 300px; 
     height: 300px;
-    margin-top: 400px;
+    margin-top: 300px;
     margin-right: 125px;
 }
 
@@ -88,7 +88,9 @@ footer {
 }
 
 .gametext {
-    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    width: 50%;
     height: 100px;
 }
 
@@ -96,6 +98,30 @@ footer {
     width: 100%;
     height: 800px;
     transition-duration: 0.5s;
+}
+
+.gridSquares {
+    display: flex;
+    justify-content: center;
+}
+
+#winstreak {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+#turn {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.gridSquares p {
+    color: white;
+    padding-top: 20px;
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .titleScreen {
