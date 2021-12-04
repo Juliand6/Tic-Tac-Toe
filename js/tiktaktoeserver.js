@@ -8,7 +8,7 @@ var squaresMulti = [[0, 0, 0],
 [0, 0, 0],
 [0, 0, 0]];
 var winner = "none";
-
+var playerRandom = null;
 
 app.post('/post', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -24,7 +24,7 @@ app.post('/post', (req, res) => {
     } 
     
     //event handler for clicking a square in multiplayer
-    else if (z['action'] == "squareClickedMulti") {
+    if (z['action'] == "squareClickedMulti") {
         n = z['squareRow'];
         m = z['squareCol'];
         var player = z['player'];
@@ -39,6 +39,15 @@ app.post('/post', (req, res) => {
         res.send(jsontext);
     }
 
+    if (z['action'] == "assignPlayer") {
+        assignPlayer();
+        var jsontext = JSON.stringify({
+            'action': 'assignPlayer',
+            'playerRandom': playerRandom,
+        });
+        console.log(playerRandom);
+        res.send(jsontext);
+    }
 
 
 
@@ -46,7 +55,7 @@ app.post('/post', (req, res) => {
 console.log("Server is running!");
 
 
-//places the player's move on the squares matrix
+//places the player's move on the squares matrix for multiplayer
 function movePlayedMulti(move) {
     if (move == "x") {
         squaresMulti[n][m] = 1;
@@ -57,7 +66,7 @@ function movePlayedMulti(move) {
 }
 
 
-//Checks all the win conditions exhaustively 
+//Checks all the win conditions exhaustively for multiplayer
 function checkWinMulti() {
     for (let p = 0; p <= 2; p++) {
         var rowSum = 0;
@@ -94,3 +103,8 @@ function checkWinMulti() {
     }
 }
 
+
+
+function assignPlayer(){
+    playerRandom = Math.floor(Math.random() * 2);
+}

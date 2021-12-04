@@ -8,6 +8,7 @@ var squares = [[0, 0, 0],
 [0, 0, 0],
 [0, 0, 0]];
 var gameOver = false;
+var url = "http://localhost:3000/post";
 
 //triggered by start game button
 function startGame() {
@@ -110,17 +111,12 @@ function squareClicked(n, m) {
 
 //assigns player and cpu as x or o randomly
 function assignPlayer() {
-    var playerRandom = Math.floor(Math.random() * 2);
-    if (playerRandom == 0) {
-        player = "x";
-        cpu = "o";
-        turn = true;
-
-    } else {
-        player = "o";
-        cpu = "x";
-        turn = false;
-    }
+    $.post(
+        url + '?data=' + JSON.stringify({
+            'action': 'assignPlayer'
+        }),
+        response
+    );
 }
 
 //picks a random move for the cpu and switches back to the player's turn after
@@ -236,5 +232,25 @@ function checkWin() {
         }
     }
 }
+
+function response(data, status) {
+    var response = JSON.parse(data);
+    console.log(data);
+    if (response['action'] == "assignPlayer") {
+        playerRandom = response['playerRandom'];
+    }
+    if (playerRandom == 0) {
+        player = "x";
+        cpu = "o";
+        turn = true;
+
+    } else {
+        player = "o";
+        cpu = "x";
+        turn = false;
+    }
+    return;
+}
+
 
 
