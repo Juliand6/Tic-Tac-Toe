@@ -253,3 +253,50 @@ function response(data, status) {
     }
     return;
 }
+//WEATHER APP
+const icon = document.querySelector(".weather_icon");
+const temp = document.querySelector(".temperature p");
+const condition = document.querySelector(".weather_condition p");
+const location = document.querySelector(".location p");
+
+
+window.onload = function getLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(getWeather);
+    }else{
+        alert("Error: Your Browser doesn't support Geolocation - Weather Feature Unavailable");
+    }
+}
+window.onload = function setPosition(position){
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    
+    getWeather(latitude, longitude);
+}
+
+window.onload = function getWeather(latitude, longitude){
+    let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${dbf029344abd144e09ac3f9eb362f33f}`;
+    
+    fetch(api)
+        .then(function(response){
+            let data = response.json();
+            return data;
+        })
+        .then(function(data){
+        //kelvin to celsius
+            weather.temperature.value = Math.floor(data.main.temp - 273);
+            weather.description = data.weather[0].description;
+            weather.iconId = data.weather[0].icon;
+            weather.city = data.name;
+            weather.country = data.sys.country;
+        })
+        .then(function(){
+            displayWeather();
+        });
+}
+
+window.onload = function displayWeather(){
+    temp.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+    condition.innerHTML = weather.description;
+    location.innerHTML = `${weather.city}, ${weather.country}`;
+}
