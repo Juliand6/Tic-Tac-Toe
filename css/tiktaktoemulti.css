@@ -80,7 +80,7 @@ footer {
 .music {
     width: 300px; 
     height: 300px;
-    margin-top: 400px;
+    margin-top: 300px;
     margin-right: 125px;
 }
 
@@ -147,6 +147,26 @@ footer {
     border: 2px solid purple; 
 }
 
+#gameOver button {
+    margin-top: 50px;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    background-color:black;
+    border: 2px solid black; 
+    transition-duration: 0.4s;
+    font-family: 'Rubik', sans-serif;
+    font-size:20px;
+    font-weight:700;
+    color:orange;
+}
+
+#gameOver button:hover {
+    color:white;
+    cursor: pointer;
+    border: 2px solid purple; 
+}
+
 .tileIndicator {
     margin-top: 150px;
     padding-left: 200px;
@@ -166,6 +186,25 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     background:url(tictactoeboard.png);
+}
+
+#gameOver {
+    width: 600px;
+    height: 400px;
+    color: white;
+    text-align:center;
+}
+
+#gameOver h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 80px;
+    margin: 0;
+    color: orange;
+}
+
+#gameOver p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
 }
 
 #turn {

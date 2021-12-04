@@ -1,5 +1,8 @@
 
-var count = 0;
+var count = 0;//detects when the board is filled and no possible moves can be played
+var url = "http://localhost:3000/post";
+var winner = null;
+
 //1 represents x, -1 represents o, 0 represents unoccupied
 var squares = [[0, 0, 0],
 [0, 0, 0],
@@ -29,6 +32,7 @@ function initGame() {
 //creates and appends the gameboard to .grid
 function createGameboard() {
     $(".gameboard").css("margin-left", "200px");
+    $("#turn").css("color", "white");
     var newContainer = document.createElement("div");
     $(newContainer).attr("id", "container");
     $(".grid").append(newContainer);
@@ -62,18 +66,49 @@ function squareClicked(n, m) {
     }
 }
 
-function win() {
+function win(player) {
     $("#turn").css("color", "black");
-    count = 0;
+    if (player == "x"){
+        winner = "Player X";
+    } else if (player == "o") {
+        winner = "Player O";
+    }
+    setTimeout(endScreen, 250);
+    console.log("win " + player);
+}
 
+function endScreen() {
+    $(".grid").empty();
+    var endScreenContainer = document.createElement("div");
+    $(endScreenContainer).attr("id", "gameOver");
+    $(endScreenContainer).append("<h1>GAME OVER</h1>");
+    $(endScreenContainer).append("<p>"+winner+" Wins!</p>");
+    $(".grid").append(endScreenContainer);
+    var newButton = document.createElement("button");
+    $(newButton).attr("id", "playAgain");
+    $(newButton).attr("onclick", "initGame()");
+    $(newButton).append("Play Again");
+    $(endScreenContainer).append(newButton);
+    $(".gameboard").css("margin-left", "0px");
 }
 
 function draw() {
-
+    $("#turn").css("color", "black");
+    $(".grid").empty();
+    var endScreenContainer = document.createElement("div");
+    $(endScreenContainer).attr("id", "gameOver");
+    $(endScreenContainer).append("<h1>GAME OVER</h1>");
+    $(endScreenContainer).append("<p>It's a Draw</p>");
+    $(".grid").append(endScreenContainer);
+    var newButton = document.createElement("button");
+    $(newButton).attr("id", "playAgain");
+    $(newButton).attr("onclick", "initGame()");
+    $(newButton).append("Play Again");
+    $(endScreenContainer).append(newButton);
+    $(".gameboard").css("margin-left", "0px");
 }
 
 //Checks all the win conditions for the player and cpu exhaustively. 
-//Calls the appropriate function if either the cpu or the player wins.
 function checkWin() {
     if (count == 9) {
         draw();
@@ -84,17 +119,9 @@ function checkWin() {
                 rowSum += squares[p][g];
             }
             if (rowSum == 3) {
-                if (player == "x") {
-                    win();
-                } else if (player == "o") {
-                    notWin();
-                }
+                win("x");
             } else if (rowSum == -3) {
-                if (player == "x") {
-                    notWin();
-                } else if (player == "o") {
-                    win()
-                }
+                win("o");
             }
         }
         for (let p = 0; p <= 2; p++) {
@@ -103,43 +130,19 @@ function checkWin() {
                 colSum += squares[g][p];
             }
             if (colSum == 3) {
-                if (player == "x") {
-                    win();
-                } else if (player == "o") {
-                    notWin();
-                }
+                win("x");
             } else if (colSum == -3) {
-                if (player == "x") {
-                    notWin();
-                } else if (player == "o") {
-                    win();
-                }
+                win("o");
             }
         }
         if (squares[0][0] + squares[1][1] + squares[2][2] == 3) {
-            if (player == "x") {
-                win();
-            } else if (player == "o") {
-                notWin();
-            }
+            win("x");
         } else if (squares[0][0] + squares[1][1] + squares[2][2] == -3) {
-            if (player == "x") {
-                notWin();
-            } else if (player == "o") {
-                win();
-            }
+            win("o");
         } else if (squares[2][0] + squares[1][1] + squares[0][2] == 3) {
-            if (player == "x") {
-                win();
-            } else if (player == "o") {
-                notWin();
-            }
+            win("x");
         } else if (squares[2][0] + squares[1][1] + squares[0][2] == -3) {
-            if (player == "x") {
-                notWin();
-            } else if (player == "o") {
-                win();
-            }
+            win("o");
         } else {
             return;
         }
