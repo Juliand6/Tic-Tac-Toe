@@ -2,6 +2,7 @@
 var count = 0;//detects when the board is filled and no possible moves can be played
 var url = "http://localhost:3000/post";
 var winner = null;
+var playerWinner = null;
 
 //1 represents x, -1 represents o, 0 represents unoccupied
 var squares = [[0, 0, 0],
@@ -20,6 +21,12 @@ function startGame() {
 
 //Initialization of a new game
 function initGame() {
+    $.post(
+        url+'?data='+JSON.stringify({
+        'action':'newGameMulti'
+        })
+    );
+    playerWinner = null;
     count = 0;
     squares = [[0, 0, 0],
     [0, 0, 0],
@@ -55,14 +62,30 @@ function squareClicked(n, m) {
         squares[n][m] = 1;
         $("#square" + n + m).append("<p>X</p>");
         count++;
+        $.post(
+            url+'?data='+JSON.stringify({
+            'action':'squareClickedMulti', 
+            'squareRow':n, 
+            'squareCol':m,
+            'player':'x'
+            }),
+            response
+        );
         $("#turn").text("Player O's Turn to move");
-        checkWin();
     } else if (count % 2 != 0 && squares[n][m] == 0) {
-        squares[n][m] = -1;
+        squares[n][m] = 1;
         $("#square" + n + m).append("<p>O</p>");
         count++;
+        $.post(
+            url+'?data='+JSON.stringify({
+            'action':'squareClickedMulti', 
+            'squareRow':n, 
+            'squareCol':m,
+            'player':'o'
+            }),
+            response
+        );
         $("#turn").text("Player X's Turn to move");
-        checkWin();
     }
 }
 
@@ -109,42 +132,24 @@ function draw() {
 }
 
 //Checks all the win conditions for the player and cpu exhaustively. 
-function checkWin() {
-        for (let p = 0; p <= 2; p++) {
-            var rowSum = 0;
-            for (let g = 0; g <= 2; g++) {
-                rowSum += squares[p][g];
-            }
-            if (rowSum == 3) {
-                win("x");
-            } else if (rowSum == -3) {
-                win("o");
-            }
-        }
-        for (let p = 0; p <= 2; p++) {
-            var colSum = 0;
-            for (let g = 0; g <= 2; g++) {
-                colSum += squares[g][p];
-            }
-            if (colSum == 3) {
-                win("x");
-            } else if (colSum == -3) {
-                win("o");
-            }
-        }
-        if (squares[0][0] + squares[1][1] + squares[2][2] == 3) {
-            win("x");
-        } else if (squares[0][0] + squares[1][1] + squares[2][2] == -3) {
-            win("o");
-        } else if (squares[2][0] + squares[1][1] + squares[0][2] == 3) {
-            win("x");
-        } else if (squares[2][0] + squares[1][1] + squares[0][2] == -3) {
-            win("o");
-        } else if (count == 9) {
-            setTimeout(draw, 300);
-        } else {
-            return;
-        }
+function checkWinMulti() {
+    if (playerWinner == "x"){
+        win("x");
+    } else if (playerWinner == "o"){
+        win("o");
+    } else if (count == 9) {
+        setTimteout(draw, 250);
+    } else {
+        return;
+    }
 }
 
-
+function response(data, status){
+    var response = JSON.parse(data);
+    console.log(data);
+    if (response['action'] == "squareClickedMulti") {
+        playerWinner = response['win'];
+        console.log(playerWinner);
+        checkWinMulti();
+    }
+}
