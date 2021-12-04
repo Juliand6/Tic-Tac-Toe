@@ -193,7 +193,7 @@ footer {
     grid-template-rows: 1fr 1fr 1fr;
     background:url(tictactoeboard.png);
 }
-.weather-container {
+.weather_container {
     position: fixed;
     width: 200px;
     height:400px;
