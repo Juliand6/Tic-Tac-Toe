@@ -41,7 +41,7 @@ function initGame() {
     $(newMsg).hide().appendTo(".grid").fadeIn(1000).delay(300).fadeOut(1000, function () {
         $(".grid").empty();
         if (player == "o") {
-            $("#turn").text("the CPU's Turn");
+            $("#turn").text("CPU's Turn");
         } else if (player == "x") {
             $("#turn").text("Your Turn");
         }
@@ -166,7 +166,7 @@ function win() {
 //Checks all the win conditions for the player and cpu exhaustively. 
 //Calls the appropriate function if either the cpu or the player wins.
 function checkWin() {
-    if (count == 9) {
+    if (count == 10) {
         notWin();
     } else {
         for (let p = 0; p <= 2; p++) {
