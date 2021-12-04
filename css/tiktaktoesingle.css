@@ -196,12 +196,12 @@ footer {
 .weather_container {
 position: fixed;
 width: 200px;
-height:400px;
+height:275px;
 border: 3px;
 border-color: orange;
 border-radius: 5px;
 /* change colours */
-background-color:navy;
+background-color: grey;
 left: 50%;
 margin-left: -400px;
 top: 50%;
@@ -210,11 +210,14 @@ margin-top: -250px;
 
 .close p{
 position: absolute;
-right: 5px;
+right: 10px;
 top: 5px;
 cursor: pointer;
 font-weight: bold;
 text-align: center;
+color: white;
+font-family: 'Poppins', sans-serif;
+font-size: 10px;
 }
 
 .temperature {
@@ -243,4 +246,6 @@ text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
     font-weight: bold;
+    top: 5px;
+    margin-bottom: 15px;
 }
