@@ -45,6 +45,7 @@ function initGame() {
         } else if (player == "x") {
             $("#turn").text("Your Turn");
         }
+        $("#turn").css("color", "white");
         createGameboard();
         if (turn == false) {
             setTimeout(cpuMove, 2500);
@@ -159,8 +160,8 @@ function notWin() {
 
 function win() {
     gameOver = true;
-    $("#turn").empty();
     $("#winstreak").empty();
+    $("#turn").css("color", "black");
     winstreak++;
     initGame();
 }
