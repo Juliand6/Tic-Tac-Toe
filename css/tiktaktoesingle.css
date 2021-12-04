@@ -193,3 +193,17 @@ footer {
     grid-template-rows: 1fr 1fr 1fr;
     background:url(tictactoeboard.png);
 }
+.weather_container {
+    position: fixed;
+    width: 200px;
+    height:400px;
+    border: 3px;
+    border-color: black;
+    border-radius: 5px;
+/* change colours */
+    background-color: white;
+    left: 50%;
+    margin-left: -400px;
+    top: 50%;
+    margin-top: -250px;
+}
