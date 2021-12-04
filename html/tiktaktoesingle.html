@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title> Singleplayer </title>
     <link rel="stylesheet" type="text/css" href="..\css\tiktaktoesingle.css" title="style" />
-    <script src="..\js\tiktaktoesingle.js"></script>
+    <script src="..\js\tiktaktoesingleclient.js"></script>
     <script src="js/weather.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,12 +48,22 @@
             </div>
         </div>
 <div class= "weather_container">
-  <!--   <div class="close" onclick = "closePopup()">
-     <p>X</p> -->
+    <div class="close" onclick = "closePopup()">
+        <p>X</p>
+        <div class="weather_title">
+            <p>Weather</p>
+        </div>
     </div>
-    <div class= "temperature"></div>
-    <div class= "weather-condition"></div>
-    <div class= "location"></div>
+    <div class= "temperature">
+        <p>-</p>
+    </div>
+    <div class= "weather_condition">
+        <p>-</p>
+    </div>
+    <div class= "location">
+        <p>-</p>
+    </div>
+
 </div>
 
     </div>
