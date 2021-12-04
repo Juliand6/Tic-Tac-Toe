@@ -1,20 +1,28 @@
-
-var n = null;
-var m = null;
-var count = 0;
 var express = require('express');
 var app = express();
+
+//multiplayer variables
+var n = null;
+var m = null;
 var squaresMulti = [[0, 0, 0],
 [0, 0, 0],
 [0, 0, 0]];
 var winner = "none";
+
+//singleplayer variables
 var playerRandom = null;
+var squaresMulti = [[0, 0, 0],
+[0, 0, 0],
+[0, 0, 0]];
+
+
 
 app.post('/post', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     console.log(JSON.parse(req.query['data']));
     var z = JSON.parse(req.query['data']);
 
+//EVENT HANDLERS FOR MULTIPLAYER
     //event handler for starting a new multiplayer game
     if (z['action'] == "newGameMulti") {
         squaresMulti = [[0, 0, 0],
@@ -39,6 +47,16 @@ app.post('/post', (req, res) => {
         res.send(jsontext);
     }
 
+
+//EVENT HANDLERS FOR SINGLEPLAYER
+    //event handler for starting a new singleplayer game
+    if (z['action'] == "newGameSingle") {
+        squaresSingle = [[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]];
+    } 
+
+    //event handler for assigning the player either x or o 
     if (z['action'] == "assignPlayer") {
         assignPlayer();
         var jsontext = JSON.stringify({
@@ -49,11 +67,11 @@ app.post('/post', (req, res) => {
         res.send(jsontext);
     }
 
-
-
 }).listen(3000);
 console.log("Server is running!");
 
+
+//------------------------------------MULTIPLAYER FUNCTIONS:---------------------------------------------------
 
 //places the player's move on the squares matrix for multiplayer
 function movePlayedMulti(move) {
@@ -62,8 +80,8 @@ function movePlayedMulti(move) {
     } else if (move == "o") {
         squaresMulti[n][m] = -1;
     }
-    count++;
 }
+
 
 
 //Checks all the win conditions exhaustively for multiplayer
@@ -105,6 +123,10 @@ function checkWinMulti() {
 
 
 
+
+//----------------------------------SINGLEPLAYER FUNCTIONS--------------------------------------:
+
+//picks either x or o randomly for the player
 function assignPlayer(){
     playerRandom = Math.floor(Math.random() * 2);
 }

@@ -138,7 +138,7 @@ function checkWinMulti() {
     } else if (playerWinner == "o"){
         win("o");
     } else if (count == 9) {
-        setTimteout(draw, 250);
+        setTimeout(draw, 250);
     } else {
         return;
     }
