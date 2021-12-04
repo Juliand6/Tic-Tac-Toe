@@ -78,8 +78,6 @@ function createGameboard() {
 function squareClicked(n, m) {
     if (turn == false) {
         return;
-    } else if (count == 10) {
-        notWin();
     } else if (squares[n][m] == 0) {
         if (player == "x") {
             $("#square" + n + m).append("<p>X</p>");
@@ -87,11 +85,11 @@ function squareClicked(n, m) {
             turn = false;
             count++;
             checkWin();
-            if (gameOver == true){
+            if (gameOver == true) {
                 return;
             } else {
-            $("#turn").text("CPU's Turn");
-            setTimeout(cpuMove, 2500);
+                $("#turn").text("CPU's Turn");
+                setTimeout(cpuMove, 2500);
             }
         } else if (player == "o") {
             $("#square" + n + m).append("<p>O</p>");
@@ -99,11 +97,11 @@ function squareClicked(n, m) {
             turn = false;
             count++;
             checkWin();
-            if (gameOver == true){
+            if (gameOver == true) {
                 return;
             } else {
-            $("#turn").text("CPU's Turn");
-            setTimeout(cpuMove, 2500);
+                $("#turn").text("CPU's Turn");
+                setTimeout(cpuMove, 2500);
             }
         }
     }
@@ -129,7 +127,7 @@ function assignPlayer() {
 function cpuMove() {
     if (count == 10) {
         notWin();
-    } else if (turn == false){
+    } else if (turn == false) {
         do {
             var cpuMoveRow = Math.floor(Math.random() * 3);
             var cpuMoveColumn = Math.floor(Math.random() * 3);
@@ -154,8 +152,7 @@ function cpuMove() {
 
 function notWin() {
     gameOver = true;
-    console.log("hi");
-
+    alert("GameOver! Please enter your name:")
 }
 
 function win() {
@@ -169,70 +166,74 @@ function win() {
 //Checks all the win conditions for the player and cpu exhaustively. 
 //Calls the appropriate function if either the cpu or the player wins.
 function checkWin() {
-    for (let p = 0; p <= 2; p++) {
-        var rowSum = 0;
-        for (let g = 0; g <= 2; g++) {
-            rowSum += squares[p][g];
-        }
-        if (rowSum == 3) {
-            if (player == "x") {
-                win();
-            } else if (player == "o") {
-                notWin();
-            }
-        } else if (rowSum == -3) {
-            if (player == "x") {
-                notWin();
-            } else if (player == "o") {
-                win()
-            }
-        }
-    }
-    for (let p = 0; p <= 2; p++) {
-        var colSum = 0;
-        for (let g = 0; g <= 2; g++) {
-            colSum += squares[g][p];
-        }
-        if (colSum == 3) {
-            if (player == "x") {
-                win();
-            } else if (player == "o") {
-                notWin();
-            }
-        } else if (colSum == -3) {
-            if (player == "x") {
-                notWin();
-            } else if (player == "o") {
-                win();
-            }
-        }
-    }
-    if (squares[0][0] + squares[1][1] + squares[2][2] == 3) {
-        if (player == "x") {
-            win();
-        } else if (player == "o") {
-            notWin();
-        }
-    } else if (squares[0][0] + squares[1][1] + squares[2][2] == -3) {
-        if (player == "x") {
-            notWin();
-        } else if (player == "o") {
-            win();
-        }
-    } else if (squares[2][0] + squares[1][1] + squares[0][2] == 3) {
-        if (player == "x") {
-            win();
-        } else if (player == "o") {
-            notWin();
-        }
-    } else if (squares[2][0] + squares[1][1] + squares[0][2] == -3) {
-        if (player == "x") {
-            notWin();
-        } else if (player == "o") {
-            win();
-        }
+    if (count == 9) {
+        notWin();
     } else {
-        return;
+        for (let p = 0; p <= 2; p++) {
+            var rowSum = 0;
+            for (let g = 0; g <= 2; g++) {
+                rowSum += squares[p][g];
+            }
+            if (rowSum == 3) {
+                if (player == "x") {
+                    win();
+                } else if (player == "o") {
+                    notWin();
+                }
+            } else if (rowSum == -3) {
+                if (player == "x") {
+                    notWin();
+                } else if (player == "o") {
+                    win()
+                }
+            }
+        }
+        for (let p = 0; p <= 2; p++) {
+            var colSum = 0;
+            for (let g = 0; g <= 2; g++) {
+                colSum += squares[g][p];
+            }
+            if (colSum == 3) {
+                if (player == "x") {
+                    win();
+                } else if (player == "o") {
+                    notWin();
+                }
+            } else if (colSum == -3) {
+                if (player == "x") {
+                    notWin();
+                } else if (player == "o") {
+                    win();
+                }
+            }
+        }
+        if (squares[0][0] + squares[1][1] + squares[2][2] == 3) {
+            if (player == "x") {
+                win();
+            } else if (player == "o") {
+                notWin();
+            }
+        } else if (squares[0][0] + squares[1][1] + squares[2][2] == -3) {
+            if (player == "x") {
+                notWin();
+            } else if (player == "o") {
+                win();
+            }
+        } else if (squares[2][0] + squares[1][1] + squares[0][2] == 3) {
+            if (player == "x") {
+                win();
+            } else if (player == "o") {
+                notWin();
+            }
+        } else if (squares[2][0] + squares[1][1] + squares[0][2] == -3) {
+            if (player == "x") {
+                notWin();
+            } else if (player == "o") {
+                win();
+            }
+        } else {
+            return;
+        }
     }
 }
 
