@@ -7,6 +7,8 @@ var turn = false;
 var squares = [[0, 0, 0],
 [0, 0, 0],
 [0, 0, 0]];
+var gameOver = false;
+
 //triggered by start game button
 function startGame() {
 
@@ -23,6 +25,8 @@ function initGame() {
     [0, 0, 0],
     [0, 0, 0]];
     count = 0;
+    turn = false;
+    gameOver = false;
     $(".grid").empty();
     assignPlayer();
     count = 0;
@@ -37,9 +41,9 @@ function initGame() {
     $(newMsg).hide().appendTo(".grid").fadeIn(1000).delay(300).fadeOut(1000, function () {
         $(".grid").empty();
         if (player == "o") {
-            $("#turn").text("It's the CPU's Turn");
+            $("#turn").text("the CPU's Turn");
         } else if (player == "x") {
-            $("#turn").text("It's Your Turn");
+            $("#turn").text("Your Turn");
         }
         createGameboard();
         if (turn == false) {
@@ -52,6 +56,7 @@ function initGame() {
 
 //creates and appends the gameboard to .grid
 function createGameboard() {
+    $(".gameboard").css("margin-left", "200px");
     var newContainer = document.createElement("div");
     $(newContainer).attr("id", "container");
     $(".grid").append(newContainer);
@@ -81,16 +86,24 @@ function squareClicked(n, m) {
             turn = false;
             count++;
             checkWin();
-            $("#turn").text("It's the CPU's Turn");
+            if (gameOver == true){
+                return;
+            } else {
+            $("#turn").text("CPU's Turn");
             setTimeout(cpuMove, 2500);
+            }
         } else if (player == "o") {
             $("#square" + n + m).append("<p>O</p>");
             squares[n][m] = -1;
             turn = false;
             count++;
             checkWin();
-            $("#turn").text("It's the CPU's Turn");
+            if (gameOver == true){
+                return;
+            } else {
+            $("#turn").text("CPU's Turn");
             setTimeout(cpuMove, 2500);
+            }
         }
     }
 }
@@ -115,7 +128,7 @@ function assignPlayer() {
 function cpuMove() {
     if (count == 10) {
         notWin();
-    } else {
+    } else if (turn == false){
         do {
             var cpuMoveRow = Math.floor(Math.random() * 3);
             var cpuMoveColumn = Math.floor(Math.random() * 3);
@@ -126,24 +139,28 @@ function cpuMove() {
             turn = true;
             count++;
             checkWin();
-            $("#turn").text("It's Your Turn");
+            $("#turn").text("Your Turn");
         } else if (cpu == "o") {
             $("#square" + cpuMoveRow + cpuMoveColumn).append("<p>O</p>");
             squares[cpuMoveRow][cpuMoveColumn] = -1;
             turn = true;
             count++;
             checkWin();
-            $("#turn").text("It's Your Turn");
+            $("#turn").text("Your Turn");
         }
     }
 }
 
 function notWin() {
+    gameOver = true;
     console.log("hi");
 
 }
 
 function win() {
+    gameOver = true;
+    $("#turn").empty();
+    $("#winstreak").empty();
     winstreak++;
     initGame();
 }
