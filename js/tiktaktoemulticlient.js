@@ -110,9 +110,6 @@ function draw() {
 
 //Checks all the win conditions for the player and cpu exhaustively. 
 function checkWin() {
-    if (count == 9) {
-        draw();
-    } else {
         for (let p = 0; p <= 2; p++) {
             var rowSum = 0;
             for (let g = 0; g <= 2; g++) {
@@ -143,10 +140,11 @@ function checkWin() {
             win("x");
         } else if (squares[2][0] + squares[1][1] + squares[0][2] == -3) {
             win("o");
+        } else if (count == 9) {
+            setTimeout(draw, 300);
         } else {
             return;
         }
-    }
 }
 
 
