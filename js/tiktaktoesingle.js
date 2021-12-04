@@ -109,7 +109,7 @@ function squareClicked(n, m) {
 }
 
 
-//assigns player and cpu as x or o randomly
+//calls the server to assign the player x or o randomly
 function assignPlayer() {
     $.post(
         url + '?data=' + JSON.stringify({
@@ -233,6 +233,8 @@ function checkWin() {
     }
 }
 
+
+//event handler for server side response
 function response(data, status) {
     var response = JSON.parse(data);
     console.log(data);
