@@ -6,7 +6,6 @@
     <title> Singleplayer </title>
     <link rel="stylesheet" type="text/css" href="..\css\tiktaktoesingle.css" title="style" />
     <script src="..\js\tiktaktoesingle.js"></script>
-    <script src="js/weather.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +17,9 @@
         <a href="tiktaktoehome.html">
             <img id="logo" src="images\logo.png" alt="tiktaktoe Logo" />
         </a>
+        
+         <button class = "weather_button" onclick="openWeather()">WEATHER</button>
+        
     </header>
     <ul class="navmenu">
         <li><a id = "current" href="tiktaktoesingle.html">SINGLEPLAYER</a></li>
@@ -47,24 +49,27 @@
                 </div>
             </div>
         </div>
-<div class= "weather_container">
-    <div class="close" onclick = "closePopup()">
-        <p>X</p>
-    </div>
-        <div class="weather_title">
-            <p>Weather</p>
-        </div>
-    <div class= "temperature">
-        <p>-</p>
-    </div>
-    <div class= "weather_condition">
-        <p>-</p>
-    </div>
-    <div class= "location">
-        <p>-</p>
-    </div>
+        <script src="weather.js"></script>
+     
+        <div class= "weather_container">
+            <div class="close" onclick = "closePopup()">
+                <p>X</p>
+            </div>
+                <div class="weather_title">
+                    <p>Weather</p>
+                </div>
+            <div class= "temperature">
+                <p>-</p>
+            </div>
+            <div class= "weather_condition">
+                <p>-</p>
+            </div>
+            <div class = "location">
+                <p>Data is based on your current location</p>
+            </div>
 
-</div>
+        
+        </div>
 
     </div>
     <footer>(c) Authors: Jason Yang and Julian D’Alessandro</footer>
