@@ -16,10 +16,26 @@
         <a href="tiktaktoehome.html">
             <img id="logo" src="images\logo.png" alt="tiktaktoe Logo" />
         </a>
-        <div class="search">
-            <input type="text" placeholder="Search">
-            <i class="fa fa-search" aria-hidden="true"></i>
-        </div>
+ <button class = "weather_button" onclick="openWeather()">WEATHER</button>
+        
+        <script src="weather.js"></script>
+     
+        <div class= "weather_container">
+            <div class="close" onclick = "closePopup()">
+                <p>X</p>
+            </div>
+                <div class="weather_title">
+                    <p>Weather</p>
+                </div>
+            <div class= "temperature">
+                <p>0°</p>
+            </div>
+            <div class= "weather_condition">
+                <p>Unknown</p>
+            </div>
+            <div class = "location">
+                <p>Data is based on your current location</p>
+            </div>
     </header>
     <ul class="navmenu">
         <li><a href="tiktaktoesingle.html">SINGLEPLAYER</a></li>
