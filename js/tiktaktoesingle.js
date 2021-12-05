@@ -257,15 +257,10 @@ function response(data, status) {
 
 //WEATHER POPUP
 
-var weatherPopup = document.getElementById("weather_container")
+document.getElementById("weather_button").addEventListener("click", function(){
+    document.getElementById("weather_container").style.display = flex
+})
 
-function openWeather() {
-    weatherPopup.style.display = "absolute";
-}
-
-function closeWeather() {
-    weatherPopup.style.display = "none";
-    }
 
 
 
