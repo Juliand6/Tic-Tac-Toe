@@ -257,9 +257,6 @@ function response(data, status) {
 
 //WEATHER POPUP
 
-document.getElementById("weather_button").addEventListener("click", function(){
-    document.getElementById("weather_container").style.display = "block"
-})
 
 
 
