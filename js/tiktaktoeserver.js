@@ -87,7 +87,10 @@ app.post('/post', (req, res) => {
 
     if (z['action'] == "leaderboardEntry") {
         var content = z['name'] + ": " + z['winstreak'] + ",";
-        fs.writeFileSync('leaderboards.txt', content);
+        console.log(content);
+        fs.appendFile('leaderboards.txt', content, function(err, result) {
+            if(err) console.log('error', err);
+        });
         console.log("leaderboards updated");
     }
 
