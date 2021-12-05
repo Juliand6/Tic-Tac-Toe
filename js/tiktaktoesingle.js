@@ -260,7 +260,7 @@ function response(data, status) {
 var weatherPopup = document.getElementById("weather_container")
 
 function openWeather() {
-    weatherPopup.style.display = "flex";
+    weatherPopup.style.display = "absolute";
 }
 
 function closeWeather() {
