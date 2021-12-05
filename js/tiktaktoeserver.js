@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var fs = require('fs');
 
 //-------multiplayer variables--------------------------------------------------------
 var n = null;
@@ -60,8 +61,8 @@ app.post('/post', (req, res) => {
     }
 
     //-----------EVENT HANDLERS FOR SINGLEPLAYER----------------------------------------------------
-    //event handler for starting a new singleplayer game
-    if (z['action'] == "newGameSingle") {
+    //event handler for starting a new singleplayer game (not needed without the other functions that don't work)
+    /*if (z['action'] == "newGameSingle") {
         squaresSingle = [[0, 0, 0],
         [0, 0, 0],
         [0, 0, 0]];
@@ -71,7 +72,7 @@ app.post('/post', (req, res) => {
         q = null;
         p = null;
         console.log(cpuMoveRow, cpuMoveColumn);
-    }
+    }*/
 
     //event handler for assigning the player either x or o 
     if (z['action'] == "assignPlayer") {
@@ -82,6 +83,12 @@ app.post('/post', (req, res) => {
         });
         console.log(playerRandom);
         res.send(jsontext);
+    }
+
+    if (z['action'] == "leaderboardEntry") {
+        var content = z['name'] + ": " + z['winstreak'] + ",";
+        fs.writeFileSync('leaderboards.txt', content);
+        console.log("leaderboards updated");
     }
 
     //doesn't work D: (supposed to be for checking for wins after player makes a move: more details in tiktaktoesingletest.js)

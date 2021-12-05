@@ -148,6 +148,7 @@ function cpuMove() {
     }
 }
 
+//even handler for when user doesn't win, directs user to the endscreen
 function notWin() {
     gameOver = true;
     $(".grid").empty();
@@ -174,11 +175,20 @@ function notWin() {
     $(".gameboard").css("margin-left", "0px");
 }
 
+
+//directs user to the play again menu and saves user data to the leaderboards
 function endScreen(){
     username = document.getElementById("inputName").value;
     if (username == null) {
         username = "anon";
     }
+    $.post(
+        url+'?data='+JSON.stringify({
+        'action':'leaderboardEntry',
+        'name': username,
+        'winstreak': winstreak
+        })
+    );
     $("#gameOver").empty();
     var playAgain = document.createElement("button");
     var leaderboards = document.createElement("button");
@@ -194,10 +204,12 @@ function endScreen(){
     $("#gameOver").append(leaderboards);
 }
 
+
+//event handler for when user wins
 function win() {
     gameOver = true;
     $("#winstreak").empty();
-    $("#turn").css("color", "black");
+    $("#turn").css("display", "none");
     winstreak++;
     initGame();
 }
