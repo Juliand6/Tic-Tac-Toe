@@ -265,6 +265,3 @@ function response(data, status) {
         }
     }
 }
-
-
-
