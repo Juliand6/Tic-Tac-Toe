@@ -265,3 +265,15 @@ function response(data, status) {
         }
     }
 }
+
+//WEATHER POPUP
+
+var weatherPopup = document.getElementById("weather_container")
+
+function openWeather() {
+    weatherPopup.style.display = "flex";
+}
+
+function closeWeather() {
+    weatherPopup.style.display = "none";
+    }
