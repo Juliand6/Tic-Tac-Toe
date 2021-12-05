@@ -299,7 +299,15 @@ function response(data, status) {
 
 
 //WEATHER POPUP
+function openWeather() {
 
+document.getElements
+ByClassName("weather_container").style.display = "block";
+}
+function closeWeather() {
+    
+    document.getElementsByClassName("weather_container").style.display = "none";
+    }
 
 
 
