@@ -8,8 +8,10 @@ var squares = [[0, 0, 0],
 [0, 0, 0],
 [0, 0, 0]];
 var gameOver = false;
-var url = "http://localhost:3000/post";//make sure the server is on before playing!!
-
+var url = "http://localhost:3000/post";
+var cpuMoveRow = null;
+var cpuMoveColumn = null;
+var winner = null;
 
 //triggered by start game button
 function startGame() {
@@ -23,11 +25,6 @@ function startGame() {
 
 //Initialization of a new game
 function initGame() {
-    $.post(
-        url+'?data='+JSON.stringify({
-        'action':'newGameSingle'
-        })
-    );
     squares = [[0, 0, 0],
     [0, 0, 0],
     [0, 0, 0]];
@@ -91,7 +88,14 @@ function squareClicked(n, m) {
             squares[n][m] = 1;
             turn = false;
             count++;
-            checkWin();
+            $.post(
+                url + '?data=' + JSON.stringify({
+                    'action': 'squareClickedSingle',
+                    'squareRowSingle': n,
+                    'squareColSingle': m,
+                }),
+                response
+            );
             if (gameOver == true) {
                 return;
             } else {
@@ -100,10 +104,17 @@ function squareClicked(n, m) {
             }
         } else if (player == "o") {
             $("#square" + n + m).append("<p>O</p>");
-            squares[n][m] = -1;
+            squares[n][m] = 1;
             turn = false;
             count++;
-            checkWin();
+            $.post(
+                url + '?data=' + JSON.stringify({
+                    'action': 'squareClickedSingle',
+                    'squareRowSingle': n,
+                    'squareColSingle': m,
+                }),
+                response
+            );
             if (gameOver == true) {
                 return;
             } else {
@@ -136,6 +147,19 @@ function cpuMove() {
             }),
             response
         );
+        if (cpu == "x") {
+            $("#square" + cpuMoveRow + cpuMoveColumn).append("<p>X</p>");
+            squares[cpuMoveRow][cpuMoveColumn] = 1;
+            turn = true;
+            count++;
+            $("#turn").text("Your Turn");
+        } else if (cpu == "o") {
+            $("#square" + cpuMoveRow + cpuMoveColumn).append("<p>O</p>");
+            squares[cpuMoveRow][cpuMoveColumn] = 1;
+            turn = true;
+            count++;
+            $("#turn").text("Your Turn");
+        }
     }
 }
 
@@ -157,72 +181,12 @@ function win() {
 function checkWin() {
     if (count == 10) {
         notWin();
+    } else if (winner = true) {
+        win();
+    } else if (winner = false) {
+        notWin();
     } else {
-        for (let p = 0; p <= 2; p++) {
-            var rowSum = 0;
-            for (let g = 0; g <= 2; g++) {
-                rowSum += squares[p][g];
-            }
-            if (rowSum == 3) {
-                if (player == "x") {
-                    win();
-                } else if (player == "o") {
-                    notWin();
-                }
-            } else if (rowSum == -3) {
-                if (player == "x") {
-                    notWin();
-                } else if (player == "o") {
-                    win()
-                }
-            }
-        }
-        for (let p = 0; p <= 2; p++) {
-            var colSum = 0;
-            for (let g = 0; g <= 2; g++) {
-                colSum += squares[g][p];
-            }
-            if (colSum == 3) {
-                if (player == "x") {
-                    win();
-                } else if (player == "o") {
-                    notWin();
-                }
-            } else if (colSum == -3) {
-                if (player == "x") {
-                    notWin();
-                } else if (player == "o") {
-                    win();
-                }
-            }
-        }
-        if (squares[0][0] + squares[1][1] + squares[2][2] == 3) {
-            if (player == "x") {
-                win();
-            } else if (player == "o") {
-                notWin();
-            }
-        } else if (squares[0][0] + squares[1][1] + squares[2][2] == -3) {
-            if (player == "x") {
-                notWin();
-            } else if (player == "o") {
-                win();
-            }
-        } else if (squares[2][0] + squares[1][1] + squares[0][2] == 3) {
-            if (player == "x") {
-                win();
-            } else if (player == "o") {
-                notWin();
-            }
-        } else if (squares[2][0] + squares[1][1] + squares[0][2] == -3) {
-            if (player == "x") {
-                notWin();
-            } else if (player == "o") {
-                win();
-            }
-        } else {
-            return;
-        }
+        return;
     }
 }
 
@@ -237,7 +201,7 @@ function response(data, status) {
             player = "x";
             cpu = "o";
             turn = true;
-    
+
         } else {
             player = "o";
             cpu = "x";
@@ -245,24 +209,17 @@ function response(data, status) {
         }
         return;
     }
-    if (response['action'] == "cpuMove") {
-        var cpuMoveRow = response['cpuMoveRow'];
-        var cpuMoveColumn = response['cpuMoveColumn'];
-        if (cpu == "x") {
-            $("#square" + cpuMoveRow + cpuMoveColumn).append("<p>X</p>");
-            squares[cpuMoveRow][cpuMoveColumn] = 1;
-            turn = true;
-            count++;
-            checkWin();
-            $("#turn").text("Your Turn");
-        } else if (cpu == "o") {
-            $("#square" + cpuMoveRow + cpuMoveColumn).append("<p>O</p>");
-            squares[cpuMoveRow][cpuMoveColumn] = -1;
-            turn = true;
-            count++;
-            checkWin();
-            $("#turn").text("Your Turn");
-        }
+    if (response['action'] == ["squareClickedSingle"]) {
+        winner = response['playerWin'];
+        checkWin();
+        return;
+    }
+    if (response['action'] == ["cpuMove"]) {
+        cpuMoveRow = response["cpuMoveRow"];
+        cpuMoveColumn = response["cpuMoveColumn"];
+        winner = response['playerWin'];
+        checkWin();
+        return;
     }
 }
 
