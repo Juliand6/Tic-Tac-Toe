@@ -193,6 +193,54 @@ footer {
     grid-template-rows: 1fr 1fr 1fr;
     background:url(tictactoeboard.png);
 }
+
+#gameOver {
+    margin-left: 100px;
+}
+
+#gameOver h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 80px;
+    margin: 0;
+    color: orange;
+}
+
+#gameOver p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+#gameOver button {
+    margin-top: 50px;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    background-color:black;
+    border: 2px solid black; 
+    transition-duration: 0.4s;
+    font-family: 'Rubik', sans-serif;
+    font-size:20px;
+    font-weight:700;
+    color:orange;
+}
+
+.input {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+#inputName {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#gameOver button:hover {
+    color:white;
+    cursor: pointer;
+    border: 2px solid purple; 
+}
+
 .weather_container {
 position: fixed;
 width: 200px;
