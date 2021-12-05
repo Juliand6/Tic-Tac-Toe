@@ -204,6 +204,7 @@ border-radius: 3px;
 background-color: grey;
 right: 70px;
 margin-top: 155px;
+display: none;
 }
 
 .close p{
