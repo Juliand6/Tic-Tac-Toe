@@ -20,6 +20,25 @@
         
          <button class = "weather_button" onclick="openWeather()">WEATHER</button>
         
+        <script src="weather.js"></script>
+     
+        <div class= "weather_container">
+            <div class="close" onclick = "closePopup()">
+                <p>X</p>
+            </div>
+                <div class="weather_title">
+                    <p>Weather</p>
+                </div>
+            <div class= "temperature">
+                <p>-</p>
+            </div>
+            <div class= "weather_condition">
+                <p>-</p>
+            </div>
+            <div class = "location">
+                <p>Data is based on your current location</p>
+            </div>
+        
     </header>
     <ul class="navmenu">
         <li><a id = "current" href="tiktaktoesingle.html">SINGLEPLAYER</a></li>
@@ -48,26 +67,6 @@
                     <button id="startGame" onclick="startGame()">Start Game</button>
                 </div>
             </div>
-        </div>
-      <script src="weather.js"></script>
-   
-        <div class= "weather_container">
-            <div class="close" onclick = "closeWeather()">
-                <p>X</p>
-            </div>
-                <div class="weather_title">
-                    <p>Weather</p>
-                </div>
-            <div class= "temperature">
-                <p>-</p>
-            </div>
-            <div class= "weather_condition">
-                <p>-</p>
-            </div>
-            <div class = "location">
-                <p>Data is based on your current location</p>
-            </div>
-
         </div>
 
     </div>
