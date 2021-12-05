@@ -8,7 +8,8 @@ var squares = [[0, 0, 0],
 [0, 0, 0],
 [0, 0, 0]];
 var gameOver = false;
-var url = "http://localhost:3000/post";
+var url = "http://localhost:3000/post";//make sure the server is on before playing!!
+
 
 //triggered by start game button
 function startGame() {
@@ -22,6 +23,11 @@ function startGame() {
 
 //Initialization of a new game
 function initGame() {
+    $.post(
+        url + '?data=' + JSON.stringify({
+            'action': 'newGameSingle'
+        })
+    );
     squares = [[0, 0, 0],
     [0, 0, 0],
     [0, 0, 0]];
@@ -85,6 +91,13 @@ function squareClicked(n, m) {
             squares[n][m] = 1;
             turn = false;
             count++;
+            $.post(
+                url + '?data=' + JSON.stringify({
+                    'action': 'playerMove',
+                    'playerMoveRow': n,
+                    'playerMoveColumn': m
+                })
+            );
             checkWin();
             if (gameOver == true) {
                 return;
@@ -97,6 +110,13 @@ function squareClicked(n, m) {
             squares[n][m] = -1;
             turn = false;
             count++;
+            $.post(
+                url + '?data=' + JSON.stringify({
+                    'action': 'playerMove',
+                    'playerMoveRow': n,
+                    'playerMoveColumn': m
+                })
+            );
             checkWin();
             if (gameOver == true) {
                 return;
@@ -124,25 +144,12 @@ function cpuMove() {
     if (count == 10) {
         notWin();
     } else if (turn == false) {
-        do {
-            var cpuMoveRow = Math.floor(Math.random() * 3);
-            var cpuMoveColumn = Math.floor(Math.random() * 3);
-        } while (squares[cpuMoveRow][cpuMoveColumn] != 0);
-        if (cpu == "x") {
-            $("#square" + cpuMoveRow + cpuMoveColumn).append("<p>X</p>");
-            squares[cpuMoveRow][cpuMoveColumn] = 1;
-            turn = true;
-            count++;
-            checkWin();
-            $("#turn").text("Your Turn");
-        } else if (cpu == "o") {
-            $("#square" + cpuMoveRow + cpuMoveColumn).append("<p>O</p>");
-            squares[cpuMoveRow][cpuMoveColumn] = -1;
-            turn = true;
-            count++;
-            checkWin();
-            $("#turn").text("Your Turn");
-        }
+        $.post(
+            url + '?data=' + JSON.stringify({
+                'action': 'cpuMove',
+            }),
+            response
+        );
     }
 }
 
@@ -244,7 +251,7 @@ function response(data, status) {
             player = "x";
             cpu = "o";
             turn = true;
-    
+
         } else {
             player = "o";
             cpu = "x";
@@ -252,7 +259,23 @@ function response(data, status) {
         }
         return;
     }
+    if (response['action'] == "cpuMove") {
+        var cpuMoveRow = response['cpuMoveRow'];
+        var cpuMoveColumn = response['cpuMoveColumn'];
+        if (cpu == "x") {
+            $("#square" + cpuMoveRow + cpuMoveColumn).append("<p>X</p>");
+            squares[cpuMoveRow][cpuMoveColumn] = 1;
+            turn = true;
+            count++;
+            checkWin();
+            $("#turn").text("Your Turn");
+        } else if (cpu == "o") {
+            $("#square" + cpuMoveRow + cpuMoveColumn).append("<p>O</p>");
+            squares[cpuMoveRow][cpuMoveColumn] = -1;
+            turn = true;
+            count++;
+            checkWin();
+            $("#turn").text("Your Turn");
+        }
+    }
 }
-
-
-

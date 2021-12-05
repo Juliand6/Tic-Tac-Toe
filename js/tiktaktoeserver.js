@@ -16,15 +16,15 @@ var winner = "none";
 var playerRandom = null;
 
 //0 represents unoccupied, 1 represents occupied
-var squaresSingle = [[0, 0, 0],
+/*var squaresSingle = [[0, 0, 0],
                      [0, 0, 0],
-                     [0, 0, 0]];
+                     [0, 0, 0]];*/
 //var singleWinner = "none";       >  function that these are implemented in
 //var playerSingle = null;            didn't work D;                
 //var q = null;                                                    
 //var p = null;                                                    
-var cpuMoveRow = null;
-var cpuMoveColumn = null;
+//var cpuMoveRow = null;
+//var cpuMoveColumn = null;
 
 
 
@@ -65,6 +65,12 @@ app.post('/post', (req, res) => {
         squaresSingle = [[0, 0, 0],
         [0, 0, 0],
         [0, 0, 0]];
+        console.log(squaresSingle);
+        cpuMoveRow = null;
+        cpuMoveColumn = null;
+        q = null;
+        p = null;
+        console.log(cpuMoveRow, cpuMoveColumn);
     }
 
     //event handler for assigning the player either x or o 
@@ -93,8 +99,8 @@ app.post('/post', (req, res) => {
         res.send(jsontext);
     }*/
 
-    //event handler for when the cpu has to pick a move
-    if (z['action'] == 'cpuMove') {
+    //event handler for when the cpu has to pick a move DOESNT WORK FOR SOME REASON ASOIDEGWOJIEGWOIJ IDK WHYYYYYY (see tiktaktoesinglewierdBUGGED.js)
+    /*if (z['action'] == 'cpuMove') {
         cpuMove();
         //checkWinSingle();
         var jsontext = JSON.stringify({
@@ -105,6 +111,13 @@ app.post('/post', (req, res) => {
         console.log(cpuMoveRow, cpuMoveColumn);
         res.send(jsontext);
     }
+
+    if (z['action'] == 'playerMove') {
+        p = z['playerMoveRow'];
+        q = z['playerMoveColumn'];
+        squaresSingle[p][q] = 1; 
+        console.log(squaresSingle);
+    }*/
 
 }).listen(3000);
 console.log("Server is running!");
@@ -170,15 +183,15 @@ function assignPlayer() {
     playerRandom = Math.floor(Math.random() * 2);
 }
 
-//cpu picks a random move on the board that's currently unoccupied.
-function cpuMove() {
+//cpu picks a random move on the board that's currently unoccupied. DOESN'T WORK SEE tiktaktoesingleweirdBUGGED.js
+/*function cpuMove() {
     do {
         cpuMoveRow = Math.floor(Math.random() * 3);
         cpuMoveColumn = Math.floor(Math.random() * 3);
     } while (squaresSingle[cpuMoveRow][cpuMoveColumn] != 0);
     squaresSingle[cpuMoveRow][cpuMoveColumn] = 1;
     return;
-}
+}*/
 
 //doesn't work/not implemented D; (supposed to be for checking win in singleplayer: more details in tiktaktoesingletest.js)
 /*function checkWinSingle() {
