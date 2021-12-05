@@ -89,6 +89,8 @@ function squareClicked(n, m) {
     }
 }
 
+
+//event handler for when player wins
 function win(player) {
     $("#turn").css("color", "black");
     if (player == "x"){
@@ -100,6 +102,12 @@ function win(player) {
     console.log("win " + player);
 }
 
+
+
+
+
+//ENDSCREENS
+//drawing the win outcome endscreen dynamically with jquery
 function endScreen() {
     $(".grid").empty();
     var endScreenContainer = document.createElement("div");
@@ -114,7 +122,7 @@ function endScreen() {
     $(endScreenContainer).append(newButton);
     $(".gameboard").css("margin-left", "0px");
 }
-
+//drawing the draw outcome endscreen dynamically with jquery
 function draw() {
     $("#turn").css("color", "black");
     $(".grid").empty();
@@ -131,7 +139,12 @@ function draw() {
     $(".gameboard").css("margin-left", "0px");
 }
 
-//Checks all the win conditions for the player and cpu exhaustively. 
+
+
+
+
+
+//Recieves win result from server and processes it 
 function checkWinMulti() {
     if (playerWinner == "x"){
         win("x");
@@ -143,6 +156,10 @@ function checkWinMulti() {
         return;
     }
 }
+
+
+
+
 
 //event handler for server side response
 function response(data, status){
