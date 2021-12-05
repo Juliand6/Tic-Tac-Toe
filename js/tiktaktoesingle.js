@@ -9,7 +9,7 @@ var squares = [[0, 0, 0],
 [0, 0, 0]];
 var gameOver = false;
 var url = "http://localhost:3000/post";
-
+var username = null;
 //triggered by start game button
 function startGame() {
 
@@ -22,6 +22,7 @@ function startGame() {
 
 //Initialization of a new game
 function initGame() {
+    username = null;
     squares = [[0, 0, 0],
     [0, 0, 0],
     [0, 0, 0]];
@@ -30,7 +31,6 @@ function initGame() {
     gameOver = false;
     $(".grid").empty();
     assignPlayer();
-    count = 0;
     var newMsg = document.createElement("div");
     $(newMsg).attr("class", "tileIndicator");
     if (player == "o") {
@@ -46,7 +46,7 @@ function initGame() {
         } else if (player == "x") {
             $("#turn").text("Your Turn");
         }
-        $("#turn").css("color", "white");
+        $("#turn").css("display", "block");
         createGameboard();
         if (turn == false) {
             setTimeout(cpuMove, 2500);
@@ -59,6 +59,8 @@ function initGame() {
 //creates and appends the gameboard to .grid
 function createGameboard() {
     $(".gameboard").css("margin-left", "200px");
+    $("#turn").css("display", "block");
+    $("#winstreak").css("display", "block");
     var newContainer = document.createElement("div");
     $(newContainer).attr("id", "container");
     $(".grid").append(newContainer);
@@ -148,7 +150,48 @@ function cpuMove() {
 
 function notWin() {
     gameOver = true;
-    alert("GameOver! Please enter your name:")
+    $(".grid").empty();
+    $("#turn").css("display", "none");
+    $("#winstreak").css("display", "none");
+    var endScreenContainer = document.createElement("div");
+    var inputName = document.createElement("input");
+    var inputBox = document.createElement("div");
+    var inputOkButton = document.createElement("button");
+    $(inputBox).append("Nickname: ")
+    $(inputBox).attr("class", "input");
+    $(inputName).attr("id", "inputName");
+    $(endScreenContainer).attr("id", "gameOver");
+    $(endScreenContainer).append("<h1>GAME OVER</h1>");
+    $(endScreenContainer).append("<p>Your final winstreak was "+winstreak+"! </p>");
+    $(endScreenContainer).append("<p>Please enter you name for a spot on the leaderboards</p>");
+    $(inputOkButton).attr("id", "okButton");
+    $(inputOkButton).attr("onclick", "endScreen()");
+    $(inputOkButton).append("Enter");
+    $(inputBox).append(inputName);
+    $(inputBox).append(inputOkButton);
+    $(endScreenContainer).append(inputBox);
+    $(".grid").append(endScreenContainer);
+    $(".gameboard").css("margin-left", "0px");
+}
+
+function endScreen(){
+    username = document.getElementById("inputName").value;
+    if (username == null) {
+        username = "anon";
+    }
+    $("#gameOver").empty();
+    var playAgain = document.createElement("button");
+    var leaderboards = document.createElement("button");
+    $(playAgain).attr("id", "playAgain");
+    $(playAgain).attr("onclick", "initGame()");
+    $(playAgain).append("Play Again");
+    $(leaderboards).attr("id", "playAgain");
+    $(leaderboards).attr("type", "button");
+    $(leaderboards).attr("onclick", "location.href='tiktaktoelead.html'");
+    $(leaderboards).append("Leaderboards");
+    $("#gameOver").append("<h1>GAME OVER</h1>");
+    $("#gameOver").append(playAgain);
+    $("#gameOver").append(leaderboards);
 }
 
 function win() {
@@ -174,11 +217,11 @@ function checkWin() {
                 if (player == "x") {
                     win();
                 } else if (player == "o") {
-                    notWin();
+                    setTimeout(notWin, 250);
                 }
             } else if (rowSum == -3) {
                 if (player == "x") {
-                    notWin();
+                    setTimeout(notWin, 250);
                 } else if (player == "o") {
                     win()
                 }
@@ -193,11 +236,11 @@ function checkWin() {
                 if (player == "x") {
                     win();
                 } else if (player == "o") {
-                    notWin();
+                    setTimeout(notWin, 250);
                 }
             } else if (colSum == -3) {
                 if (player == "x") {
-                    notWin();
+                    setTimeout(notWin, 250);
                 } else if (player == "o") {
                     win();
                 }
@@ -207,11 +250,11 @@ function checkWin() {
             if (player == "x") {
                 win();
             } else if (player == "o") {
-                notWin();
+                setTimeout(notWin, 250);
             }
         } else if (squares[0][0] + squares[1][1] + squares[2][2] == -3) {
             if (player == "x") {
-                notWin();
+                setTimeout(notWin, 250);
             } else if (player == "o") {
                 win();
             }
@@ -219,11 +262,11 @@ function checkWin() {
             if (player == "x") {
                 win();
             } else if (player == "o") {
-                notWin();
+                setTimeout(notWin, 250);
             }
         } else if (squares[2][0] + squares[1][1] + squares[0][2] == -3) {
             if (player == "x") {
-                notWin();
+                setTimeout(notWin, 250);
             } else if (player == "o") {
                 win();
             }
