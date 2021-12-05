@@ -254,5 +254,19 @@ function response(data, status) {
     }
 }
 
+<<<<<<< HEAD
 
 
+=======
+//WEATHER POPUP
+
+var weatherPopup = document.getElementById("weather_container")
+
+function openWeather() {
+    weatherPopup.style.display = "flex";
+}
+
+function closeWeather() {
+    weatherPopup.style.display = "none";
+    }
+>>>>>>> 3dfc33c5d1264603ac9ea082908fba8b01dae74d
