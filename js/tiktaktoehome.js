@@ -1,9 +1,11 @@
 //WEATHER POPUP
 function openWeather() {
 
-    document.getElementById("weather_container").style.display = "block";
+    $(".weather_container").css("display", "block");
+    //document.getElementById("weather_container").style.display = "block";
     }
     function closeWeather() {
         
-        document.getElementById("weather_container").style.display = "none";
+        $(".weather_container").css("display", "none");
+        //document.getElementById("weather_container").style.display = "none";
         }

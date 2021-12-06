@@ -7,3 +7,6 @@ function openWeather() {
         
         document.getElementById("weather_container").style.display = "none";
         }
+
+
+
