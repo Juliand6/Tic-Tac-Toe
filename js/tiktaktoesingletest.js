@@ -1,3 +1,11 @@
+/* 
+In this version of tiktaktoesingle, I try to implement the cpu move function into the serverside without the check move function.
+It doesn't work but you're welcome to read the code behind it.*/
+
+//UNUSED FILE!! 
+
+
+
 var player = null;
 var cpu = null;
 var winstreak = 0;

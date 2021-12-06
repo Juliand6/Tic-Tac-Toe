@@ -1,3 +1,12 @@
+/* in this version of tiktaktoesingle, I try to keep the entire game board state stored on the serverside and 
+as a result the serverside will manage checking win, the cpu's move, and assigning the player. 
+The goal of this project was to have all three of these functions implemented properly, however 
+they don't fully work as intended so rather than submitting the buggy version I decided to include
+it here with the working version of single.js with a few less serverside functions connected to the actual html*/
+
+//UNUSED FILE
+
+
 var player = null;
 var cpu = null;
 var winstreak = 0;
