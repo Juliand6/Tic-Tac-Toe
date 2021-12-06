@@ -313,14 +313,14 @@ function response(data, status) {
 //WEATHER POPUP
 function openWeather() {
 
-document.getElements
-ByClassName("weather_container").style.display = "block";
-}
-function closeWeather() {
-    
-    document.getElementsByClassName("weather_container").style.display = "none";
+    $(".weather_container").css("display", "block");
+    //document.getElementById("weather_container").style.display = "block";
     }
-
+    function closeWeather() {
+        
+        $(".weather_container").css("display", "none");
+        //document.getElementById("weather_container").style.display = "none";
+        }
 
 
 
